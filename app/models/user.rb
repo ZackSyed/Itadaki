@@ -1,24 +1,21 @@
 class User < ApplicationRecord 
     validates :username, :password_digest, :session_token, presence: true
     validates :password, length: { minimum: 6, allow_null: true }
-    validates :email, allow_null: true 
-    validate :valid_email?
 
-    after_initialize :ensure_session_token, :valid_email?
+    after_initialize :ensure_session_token
     attr_reader :password
 
-    def valid_email?(self.email)
-        if (self.email.nil?) 
-            return true 
-        else 
-           email_check = self.email.split('@');
-           return true if email_check.length == 2
-        end 
-        false 
-        errors.add(:email, "Not a valid email")
-    end 
+    # def self.valid_email?(self.email)
+    #     if (self.email.nil?) 
+    #         return true 
+    #     else 
+    #        email_check = self.email.split('@');
+    #        return email_check.length == 2 ? true : false  
+    #     end 
+    #     return false 
+    # end 
 
-    def find_by_credentials(username, password)
+    def self.find_by_credentials(username, password)
         user = User.find_by(username: username)
         if user && user.is_password?(password) 
             user 
