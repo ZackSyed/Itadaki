@@ -29,5 +29,5 @@
 
 #ignore bundle files with the node modules folder as well.
 node_modules/
-bundle.js
+bundle.js*
 bundle.js.map 

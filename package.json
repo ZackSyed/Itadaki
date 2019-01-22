@@ -17,7 +17,7 @@
     "webpack": "^4.28.4",
     "webpack-cli": "^3.2.1"
   },
-  "description": "This README would normally document whatever steps are necessary to get the application up and running.",
+  "description": "A app that helps splitting tabs between friends.",
   "version": "1.0.0",
   "main": "./frontend/itadaki.jsx",
   "directories": {
@@ -26,7 +26,13 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack --watch -webpack-cli"
+    "postinstall": "./node_modules/.bin/webpack --mode=production",
+    "start": "./node_modules/.bin/webpack --mode=production",
+    "webpack": "webpack --mode=development --watch"
+  },
+  "engines": {
+    "node": "10.13.0",
+    "npm": "6.4.1"
   },
   "repository": {
     "type": "git",
