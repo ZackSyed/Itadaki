@@ -11,9 +11,7 @@ class Api::UsersController < ApplicationController
     end 
     
     def create 
-        debugger
         @user = User.new(user_params)
-        debugger
         if @user 
             login(@user)
             render :show
