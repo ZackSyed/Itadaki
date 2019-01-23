@@ -19,4 +19,8 @@ class Api::SessionsController < ApplicationController
             render json: {}, status: 404 if @user.nil?
         end
     end 
+
+    def user_params
+        params.require(:user).permit(:username, :password)
+    end 
 end 
