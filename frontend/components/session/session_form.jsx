@@ -1,4 +1,5 @@
 import React from 'react';
+import { push } from 'react-router-redux'; 
 
 class SessionForm extends React.Component {
     constructor(props){
@@ -17,6 +18,7 @@ class SessionForm extends React.Component {
             username: "",
             password: ""
         };
+        push('/');
     }
 
     fillForm(field) {

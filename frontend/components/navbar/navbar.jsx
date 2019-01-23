@@ -1,5 +1,5 @@
 import React from 'react'; 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux'; 
 import { logout } from '../../actions/session_actions';
 
@@ -18,7 +18,6 @@ class Navbar extends React.Component {
 
     render() {
         let { user } = this.props; 
-        debugger
         // render user loggedIn menu. 
           const userHere = (
                <>
@@ -34,9 +33,9 @@ class Navbar extends React.Component {
          // render login / signup buttons  
           const noUser = (
             <li >
-            <Link className="session-buttons" to="/login">Log in </Link>
+            <NavLink className="session-buttons" to="/login">Log in </NavLink>
              or
-            <Link className="session-buttons" to="/signup"> Sign up</Link>
+            <NavLink className="session-buttons" to="/signup"> Sign up</NavLink>
             </li>
           )
      
