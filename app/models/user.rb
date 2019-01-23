@@ -34,12 +34,12 @@ class User < ApplicationRecord
     end 
 
     def reset_token!
-        self.session_token = SecureRandom::urlsafe_base64
+        self.session_token = SecureRandom.urlsafe_base64
         self.save
         self.session_token
     end 
 
     def ensure_session_token
-        self.session_token ||= SecureRandom::urlsafe_base64
+        self.session_token ||= SecureRandom.urlsafe_base64
     end 
 end

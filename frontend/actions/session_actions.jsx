@@ -16,9 +16,12 @@ const logoutCurrentUser = () => {
     };
 };
 
-export const createNewUser = (formUser) => dispatch => ApiSessionUtil.signup(formUser).then(
-    user => dispatch(receiveCurrentUser(user))
-);
+// note on bug: the action dispatched to ajax request, then goes into server. 
+// the user object is not being carried to rails????
+export const createNewUser = (user) => dispatch => {
+    return ApiSessionUtil.signup(user).then(
+    user => dispatch(receiveCurrentUser(user))); 
+};
 
 export const loginUser = formUser => dispatch => ApiSessionUtil.login(formUser)
     .then( user => dispatch(receiveCurrentUser(user)));
