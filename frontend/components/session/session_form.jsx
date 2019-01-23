@@ -12,7 +12,7 @@ class SessionForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault(); 
-        this.props.processForm(); 
+        this.props.processForm(this.state); 
         this.setState = {
             username: "",
             password: ""

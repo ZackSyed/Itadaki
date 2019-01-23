@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
     window.logout = SessionApi.logout; 
     window.getState = store.getState; 
     window.dispatch = store.dispatch; 
-    window.create = createNewUser(); 
+    window.create = createNewUser; 
     // TESTING END 
 
     const root = document.getElementById('root');
