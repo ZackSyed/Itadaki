@@ -31,10 +31,9 @@ class SessionForm extends React.Component {
     render() {
         let { formType, navLink } = this.props; 
         return (
-            <>
-            <header>Welcome!!</header>
-            <h2>Please {formType} or {navLink}</h2>
+            <div>
             <form onSubmit={this.handleSubmit} className="session-form">
+                <h2>Please {formType} or {navLink}</h2>
 
                 <label>Username:
                 <input className="input-field" onChange={this.fillForm('username')} type="text" value={this.state.username}/>
@@ -48,7 +47,7 @@ class SessionForm extends React.Component {
                 
                 <input type="submit" value={formType}/>
             </form>
-            </>
+            </div>
         );
     }
 

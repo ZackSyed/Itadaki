@@ -1,7 +1,9 @@
 import React from 'react'; 
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'; 
 import { logout } from '../../actions/session_actions';
+import { withRouter } from "react-router";
+
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -17,36 +19,49 @@ class Navbar extends React.Component {
     
 
     render() {
-        let { user } = this.props; 
+        let { user, location: { pathname } } = this.props; 
         // render user loggedIn menu. 
+            let className; 
+            if (pathname === '/signup') {
+               className = 'navbar disappear';
+            } else {
+               className = 'navbar present';
+            }
+
+
           const userHere = (
                <>
-               <li><button className="dropdown-user-menu" >{user.username}
+               <li ><button className="dropdown-user-menu" >{user.username}
                <b className="carrot"></b></button></li>
 
                <li>
-                   <button className="session-buttons" onClick={this.handleClick}>Log out</button>
+                   <button className="session-button logout" onClick={this.handleClick}>Log out</button>
                </li>
                </>
           )
 
          // render login / signup buttons  
           const noUser = (
-            <li >
-            <NavLink className="session-buttons" to="/login">Log in </NavLink>
-             or
-            <NavLink className="session-buttons" to="/signup"> Sign up</NavLink>
-            </li>
+            <>
+                <li>
+                <Link className="session-button logger" to="/login">Log in </Link>
+                </li>
+                <li >
+                <Link className="session-button signer" to="/signup"> Sign up</Link>
+                </li>
+            </>
           )
      
 
 
         return (
-            <header className="navbar">
-                <h1 id="app-name">Itadaki</h1>
-                <ul>
-                    {user.id ? userHere : noUser }
-                </ul>
+            <header className={className}>
+                <div className="flex-container">
+                    <h1 id="app-name">Itadaki</h1>
+                    <ul className="navbuttons">
+                        {user.id ? userHere : noUser }
+                    </ul>
+                </div>
             </header>
         )
     }
@@ -67,4 +82,4 @@ const mdp = dispatch => ({
 })
 
 
-export default connect(msp, mdp)(Navbar); 
+export default withRouter(connect(msp, mdp)(Navbar)); 

@@ -7,6 +7,16 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <%= favicon_link_tag asset_path('splash/flavicon.png') %>
+  <script type="text/javascript">
+      window.flavicon = "<%= image_url('splash/flavicon.png') %>"
+ </script>
+ <script type="text/javascript">
+  window.splash1 = "<%= image_url('splash/pic1-splash.png') %>"
+  </script>
+  <script type="text/javascript">
+    window.splash2 = "<%= image_url('splash/iphone-splash.png') %>"
+  </script>
   </head>
 
   <body>

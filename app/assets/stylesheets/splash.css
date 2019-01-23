@@ -1,0 +1,37 @@
+.masthead {
+    box-shadow: none;
+}
+
+.tagline {
+    align-items: center;
+}
+
+.main-images {
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-right: 25px;
+    margin-left: 25px;
+    position: relative;
+    height: 380px; 
+    padding: 23px 0;
+}
+
+.small-img {
+    height: 64px;
+    width: 64px;
+}
+
+.splash-img {
+    height: 392px;
+    width: 574px;
+}
+
+.splash-small-img {
+    height: 392px;
+    width: 185.22px;
+}
+
+.main-images .img {
+    
+}
