@@ -10,9 +10,11 @@ const App = () => (
     <div>    
         <Navbar />
        
+        <div className="under-nav"> 
         <Route path='/' exact  component={Splash}/>
         <AuthRoute path="/login" component={LoginContainer} />
         <AuthRoute path="/signup" component={SignupContainer} />
+        </div>
     </div>
 );
 

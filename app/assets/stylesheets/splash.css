@@ -8,7 +8,7 @@
     font-size: 68px;
     margin-bottom: 10px;
     white-space: nowrap;
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-family: inherit;
     line-height: 36px;
     color: #444;
     text-rendering: optimizeLegibility;
@@ -16,7 +16,7 @@
 
 .longer-tagline {
     text-align: center;
-    font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    font-family: inherit;
     font-size: 21px;
     margin-top: 20px;
     text-rendering: optimizeLegibility;
@@ -40,8 +40,8 @@
 .small-img {
     height: 64px;
     width: 64px;
-    margin-top: 30px;
-    margin-right: 15px;
+    margin-top: 49px;
+    margin-right: 37px;
 }
 
 .splash-img {
@@ -49,18 +49,38 @@
     width: 702.297px;
     position: relative;
     opacity: 1;
-    -webkit-transform: scale(1);
-    -webkit-transition: all 0.25s ease;
     align-content: center;
+    transition: transform .2s;
     margin-left: 121px;
-    margin-right: 29px;  
+    margin-right: 29px;
 }
 
 .splash-small-img {
     height: 441px;
     width: 208.37px;
     align-content: center;
-    margin-left: -22px; 
+    transition: transform .2s;
+    margin-left: -22px;
+}
+
+.splash-img:hover {
+    transform: translate(50px);
+    z-index: 1; 
+}
+
+.splash-small-img:hover {
+    transform: translate(-50px);
+    z-index: 1; 
+}
+
+.splash-small-img:hover::before ~ .splash-img {
+    opacity: 0.5;
+    transform: translate(50px);
+}
+
+.splash-img:hover ~ .splash-small-img {
+    opacity: 0.5;
+    transform: translate(-50px);
 }
 
 .signup-container {
@@ -72,6 +92,16 @@
 .signup {
     background-color: #ff641e;
     border-color: #ee530f;
-    width: 138px;
+    height: 112px;
     border-radius: 12px;
+    width: 302px;
+    font-size: 28px;
+    text-align: center;
+    padding: 12px 20px;
+    z-index: 1;
+    position: relative;
+    margin-top: 3px;
+    margin-bottom: 10px
 }
+
+.signup-line {}

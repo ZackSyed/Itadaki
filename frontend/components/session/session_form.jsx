@@ -6,6 +6,7 @@ class SessionForm extends React.Component {
         super(props);
         this.state = {
             username: "",
+            email: "",
             password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -16,6 +17,7 @@ class SessionForm extends React.Component {
         this.props.processForm(this.state); 
         this.setState = {
             username: "",
+            email: "",
             password: ""
         };
         push('/');
@@ -30,18 +32,25 @@ class SessionForm extends React.Component {
 
     render() {
         let { formType, navLink } = this.props; 
+
         return (
             <div>
+            <img className="small-img" src={window.flavicon}/>
             <form onSubmit={this.handleSubmit} className="session-form">
                 <h2>Please {formType} or {navLink}</h2>
 
                 <label>Username:
-                <input className="input-field" onChange={this.fillForm('username')} type="text" value={this.state.username}/>
+                <input className="input user" onChange={this.fillForm('username')} type="text" value={this.state.username}/>
+                </label>
+                <br/>
+
+                <label>email:
+                <input  className="input email " onChange={this.fillForm('email')} type="text" value={this.state.password}/>
                 </label>
                 <br/>
 
                 <label>Password:
-                <input  className="input-field" onChange={this.fillForm('password')} type="password" value={this.state.password}/>
+                <input  className="input password" onChange={this.fillForm('password')} type="password" value={this.state.password}/>
                 </label>
                 <br/>
                 

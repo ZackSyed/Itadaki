@@ -1,5 +1,5 @@
 import React from 'react';
-import { push } from 'react-router-redux';
+import { Link } from 'react-router-dom';
 
 const splash = () => (
 <div className="masthead">
@@ -22,7 +22,10 @@ const splash = () => (
     </div>
 
     <div className="signup-container">
-        <button className="btn signup" onClick={push('/signup')}>Sign Up</button>
+        <Link className="btn-large" to="/signup">
+        <h3 className="signup-line">Get started now</h3>
+        <p className="signup-line2">(it's free!)</p>
+        </Link>
     </div>
 
 

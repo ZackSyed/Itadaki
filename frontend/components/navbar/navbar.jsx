@@ -44,10 +44,10 @@ class Navbar extends React.Component {
           const noUser = (
             <>
                 <li>
-                <Link className="session-button logger" to="/login">Log in </Link>
+                <Link className="btn" to="/login">Log in </Link>
                 </li>
                 <li >
-                <Link className="session-button signer" to="/signup"> Sign up</Link>
+                <Link className="btn-s" to="/signup"> Sign up</Link>
                 </li>
             </>
           )
@@ -57,7 +57,17 @@ class Navbar extends React.Component {
         return (
             <header className={className}>
                 <div className="flex-container">
-                    <h1 id="app-name">Itadaki</h1>
+                    <h1>
+                        <ul className="letters">
+                            <li>I</li>
+                            <li>T</li>
+                            <li>A</li>
+                            <li>D</li>
+                            <li>A</li>
+                            <li>K</li>
+                            <li>I</li>
+                        </ul>  
+                    </h1>
                     <ul className="navbuttons">
                         {user.id ? userHere : noUser }
                     </ul>
