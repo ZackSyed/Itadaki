@@ -7,6 +7,12 @@ const splash = () => (
         Split expenses with friends
     </h1>
 
+    <div className='longer-tagline'>
+        <strong>Share</strong> bills and IOUs.
+        <strong> Make sure</strong> everyone gets paid back.
+        <strong> Totally free</strong> for web, iphone, and Android.
+    </div>
+
     <div className="main-images">
         <span className="images">
             <img className="splash-img" src={window.splash1}/>
