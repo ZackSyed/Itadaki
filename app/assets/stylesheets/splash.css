@@ -46,16 +46,32 @@
 
 .splash-img {
     height: 441px;
-    width: 646.297px;
+    width: 702.297px;
     position: relative;
     opacity: 1;
     -webkit-transform: scale(1);
     -webkit-transition: all 0.25s ease;
     align-content: center;
+    margin-left: 121px;
+    margin-right: 29px;  
 }
 
 .splash-small-img {
     height: 441px;
     width: 208.37px;
     align-content: center;
+    margin-left: -22px; 
+}
+
+.signup-container {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+.signup {
+    background-color: #ff641e;
+    border-color: #ee530f;
+    width: 138px;
+    border-radius: 12px;
 }

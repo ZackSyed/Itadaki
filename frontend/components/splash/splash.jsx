@@ -1,4 +1,5 @@
 import React from 'react';
+import { push } from 'react-router-redux';
 
 const splash = () => (
 <div className="masthead">
@@ -18,6 +19,10 @@ const splash = () => (
             <img className="splash-img" src={window.splash1}/>
             <img className="splash-small-img" src={window.splash2}/>
         </span>
+    </div>
+
+    <div className="signup-container">
+        <button className="btn signup" onClick={push('/signup')}>Sign Up</button>
     </div>
 
 
