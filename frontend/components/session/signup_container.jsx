@@ -7,8 +7,10 @@ import SessionForm from './session_form';
 
 const msp = state => {
     return {
-        formType: 'Sign Up', 
-        navLink: <Link to='/login'>Already have an account</Link>
+        formType: 'sign-up', 
+        navLink: <Link to='/login'>Already have an account,  Log in</Link>,
+        taglines: { top: "INTRODUCE YOURSELF", first: "Hi there! My name is", button: "Sign me up!" },
+        className: { form: "signmeup", email: "email-field", tag: "tag-2", submit: "btn submit", t: "top" }
     };
 };
 

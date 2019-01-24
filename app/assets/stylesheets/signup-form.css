@@ -1,0 +1,96 @@
+.sign-up {
+    display: flex;
+    align-content: center;
+    max-width: 700px;
+    max-height: 550px;
+    margin-left: 220px;
+}
+
+.top {
+    font-size: 15px;
+    color: gray;
+    margin-right: auto;
+}
+
+.session-img {
+    /* border: 5px solid blue;  */
+    height: 200px;
+    width: 200px;
+    margin-right: -126px;
+    margin-left: 150px;
+    margin-top: 41px;
+}
+
+.signmeup {
+    /* border: 5px solid yellow;  */
+    display: flex;
+    flex-direction: column;
+    height: 477px;
+    width: 550px;
+    margin-left: 119px;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.submit {
+    max-height: 53px;
+    max-width: 152px;
+    font-size: 20px;
+    background: #ff652f;
+    border: 1px solid #e65928;
+    box-shadow: #e65928 0px 1px 2px 0px;
+    vertical-align: middle;
+    margin-right: auto;
+}
+
+.submit:hover {
+    border-top-color: #f1612c;
+    background: #f0531a;
+}
+
+.either-or {
+    width: 200px;
+    text-decoration: none;
+}
+
+.user-field {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    height: 29px;
+    font-size: 20px;
+    line-height: 110%;
+    width: 342px;
+    padding: 4px;
+    margin-bottom: -10px;
+    margin-top: 6px;
+}
+
+.email-field {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    height: 32px;
+    font-size: 20px;
+    line-height: 110%;
+    width: 342px;
+    padding: 4px;
+    margin-bottom: -10px;
+    margin-top: 6px;
+}
+
+.password-field {
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+    background-color: #ffffff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    height: 28px;
+    font-size: 20px;
+    line-height: 110%;
+    width: 342px;
+    padding: 4px;
+    margin-bottom: -10px;
+    margin-top: 6px;
+}

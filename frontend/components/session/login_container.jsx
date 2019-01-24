@@ -7,8 +7,13 @@ import SessionForm from './session_form';
 
 const msp = state => {
     return {
-        formType: 'Log In', 
-        navLink: <Link to='/signup'>Make an account?</Link>
+        formType: 'log-in', 
+        navLink: <Link to='/signup'>Make an account</Link>,
+        taglines: { top: "WELCOME TO SPLITWISE", 
+        bottom: "forgot your password?", 
+        button: "Log in", first: "username:" },
+        className: { form: "logmein", email: "em-field", 
+        tag: "empty", submit: "btn log", t: "tip" } 
     };
 };
 

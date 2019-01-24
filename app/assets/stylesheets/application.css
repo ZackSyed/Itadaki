@@ -14,17 +14,39 @@
  *= require_self
  */
 
-html, body, header, nav, h1, a,
-ul, li, strong, main, button, i,
-section, img, div, h2, p, form,
-fieldset, label, input, textarea,
-span, article, footer, time, small {
-   font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-   background: transparent; 
+html,
+body,
+header,
+nav,
+h1,
+a,
+ul,
+li,
+strong,
+main,
+button,
+i,
+section,
+img,
+div,
+h2,
+p,
+form,
+fieldset,
+label,
+input,
+textarea,
+span,
+article,
+footer,
+time,
+small {
+  font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  background: transparent;
 }
 
 ul {
-   list-style: none;
+  list-style: none;
 }
 
 input[type="password"],
@@ -44,4 +66,18 @@ button {
 .btn,
 input[type="submit"] {
   cursor: pointer;
+}
+
+.under-nav {
+  margin-top: 47px; 
+}
+
+.btn {
+  padding: 5.5px 11px;
+  border-radius: 4px;
+  text-shadow: rgba(0,0,0,.4) 0 -1px 0;
+  font-size: 16px;
+  color: #fff;
+  text-decoration: none;
+  vertical-align: middle;
 }

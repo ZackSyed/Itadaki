@@ -35,7 +35,7 @@ class Navbar extends React.Component {
                <b className="carrot"></b></button></li>
 
                <li>
-                   <button className="session-button logout" onClick={this.handleClick}>Log out</button>
+                   <button className="btn logout" onClick={this.handleClick}>Log out</button>
                </li>
                </>
           )
@@ -44,10 +44,10 @@ class Navbar extends React.Component {
           const noUser = (
             <>
                 <li>
-                <Link className="btn" to="/login">Log in </Link>
+                <Link className="btn btn-l" to="/login">Log in </Link>
                 </li>
                 <li >
-                <Link className="btn-s" to="/signup"> Sign up</Link>
+                <Link className="btn btn-s" to="/signup"> Sign up</Link>
                 </li>
             </>
           )

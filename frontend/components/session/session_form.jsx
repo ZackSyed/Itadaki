@@ -1,5 +1,6 @@
 import React from 'react';
 import { push } from 'react-router-redux'; 
+import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {
     constructor(props){
@@ -31,30 +32,36 @@ class SessionForm extends React.Component {
 
 
     render() {
-        let { formType, navLink } = this.props; 
+        let { formType, navLink, 
+            taglines: { top, first, button }, 
+            className: { email, tag, form, submit, t } } = this.props; 
 
         return (
-            <div>
-            <img className="small-img" src={window.flavicon}/>
-            <form onSubmit={this.handleSubmit} className="session-form">
-                <h2>Please {formType} or {navLink}</h2>
+            <div className={formType}>
+             <Link to="/"><img className="session-img" src={window.flavicon}/></Link>
+            <form onSubmit={this.handleSubmit} className={form}>
+                <h2 className={t}>{top}</h2>
 
-                <label>Username:
-                <input className="input user" onChange={this.fillForm('username')} type="text" value={this.state.username}/>
+                <label className="tag">{first}
+                <br/>
+                <input className="user-field" onChange={this.fillForm('username')} type="text" value={this.state.username}/>
                 </label>
                 <br/>
 
-                <label>email:
-                <input  className="input email " onChange={this.fillForm('email')} type="text" value={this.state.password}/>
+                <label className={tag}>Here's my <strong>email address</strong> (optional):
+                <br/>
+                <input  className={email} onChange={this.fillForm('email')} type="text" value={this.state.email}/>
                 </label>
                 <br/>
 
-                <label>Password:
-                <input  className="input password" onChange={this.fillForm('password')} type="password" value={this.state.password}/>
+                <label className="tag-3">Password:
+                <br/>
+                <input  className="password-field" onChange={this.fillForm('password')} type="password" value={this.state.password}/>
                 </label>
                 <br/>
                 
-                <input type="submit" value={formType}/>
+                <input className={submit} type="submit" value={button}/>
+                <h2 className="either-or">{navLink}</h2>
             </form>
             </div>
         );
