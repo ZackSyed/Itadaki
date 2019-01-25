@@ -12,6 +12,11 @@
     margin-right: auto;
 }
 
+.tag {
+    font-size: 20px; 
+}
+
+
 .session-img {
     /* border: 5px solid blue;  */
     height: 200px;
@@ -33,14 +38,14 @@
 }
 
 .submit {
-    max-height: 53px;
-    max-width: 152px;
     font-size: 20px;
     background: #ff652f;
     border: 1px solid #e65928;
     box-shadow: #e65928 0px 1px 2px 0px;
     vertical-align: middle;
     margin-right: auto;
+    height: 54px;
+    width: 151px;
 }
 
 .submit:hover {
@@ -49,8 +54,8 @@
 }
 
 .either-or {
-    width: 200px;
-    text-decoration: none;
+    width: 343px;
+    margin-bottom: 52px;
 }
 
 .user-field {

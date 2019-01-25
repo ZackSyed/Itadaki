@@ -10,7 +10,7 @@ const msp = state => {
         formType: 'sign-up', 
         navLink: <Link to='/login'>Already have an account,  Log in</Link>,
         taglines: { top: "INTRODUCE YOURSELF", first: "Hi there! My name is", button: "Sign me up!" },
-        className: { form: "signmeup", email: "email-field", tag: "tag-2", submit: "btn submit", t: "top" }
+        className: { form: "signmeup", email: "email-field", tag: "tag", submit: "btn submit", t: "top" }
     };
 };
 
