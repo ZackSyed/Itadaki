@@ -10,22 +10,23 @@ class UserAccount extends React.Component {
     }
 
     render(){
-        const account = (
-            <div className="info">
-                <h1>Your account</h1>
-                <FontAwesomeIcon icon={faUserSecret} className="account-pic" />
-                <ul className="account-list">
-                    <li>{}<FontAwesomeIcon icon={faUserSecret} className="account-pic" /></li>
-                </ul>
-
-            </div>
-       )
-
-
-
-
+        let { user } = this.props; 
+        // add links when those features are flushed out!!!!!!!!!
         return (
+            <div className="info">
+            <h1>Your account</h1>
+            <FontAwesomeIcon icon={faUserSecret} className="account-pic" />
+            <ul className="account-list">
+                <li>your name</li>>
+                <li>{user.username}<FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
+                <li>your email address</li>
+                <li>{user.email ? user.email : "None"}<FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
+                <li>Your password</li>
+                <li>........<FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
+                <li></li>
+            </ul>
 
+        </div>
         )
     }
 }

@@ -6,8 +6,8 @@ import { fetchUser } from '../../actions/user_actions';
 
 const msp = state => {
     let user = {}; 
-    if (session.id) {
-        user = entities.users[session.id];
+    if (state.session.id) {
+        user = state.entities.users[state.session.id];
     }
     return {
         user
