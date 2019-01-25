@@ -21,9 +21,9 @@ class SessionForm extends React.Component {
             email: "",
             password: ""
         };
-        this.props.history.push('/dashboard');
     }
 
+    
     fillForm(field) {
         return e => {
             this.setState({ [field]: e.target.value });

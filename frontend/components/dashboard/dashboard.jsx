@@ -22,6 +22,7 @@ class Dashboard extends React.Component {
         return (
             <div className="dash">
                 <div className="sidebar">
+                    <Link to="/account">Go To Account</Link>
                     <Link onClick={this.handleSubmit} className="btn to-dash" to="/dashboard"><img className="main-dash-img" src={window.flavicon}/> Dashboard</Link>
                     <Link onClick={this.handleSubmit} className="btn rec-act" to="/activity"><FontAwesomeIcon icon={faFlag} className="flag" /> Recent activity</Link>
                     <Link onClick={this.handleSubmit} className="btn all-exp" to="/all"><FontAwesomeIcon icon={faListUl} className="menu" /> All expenses</Link>

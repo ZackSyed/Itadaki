@@ -17,12 +17,12 @@ class UserAccount extends React.Component {
             <h1>Your account</h1>
             <FontAwesomeIcon icon={faUserSecret} className="account-pic" />
             <ul className="account-list">
-                <li>your name</li>>
+                <li>your name</li>
                 <li>{user.username}<FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
                 <li>your email address</li>
-                <li>{user.email ? user.email : "None"}<FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
+                <li>{user.email ? user.email : "None"} <FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
                 <li>Your password</li>
-                <li>........<FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
+                <li>........ <FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
                 <li></li>
             </ul>
 
