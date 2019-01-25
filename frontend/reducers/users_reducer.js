@@ -1,4 +1,4 @@
-import { RECEIVE_USER, RECEIVE_USERS } from '../actions/user_actions';
+import { RECEIVE_USER, RECEIVE_USERS, LOGOUT_CURRENT_USER } from '../actions/user_actions';
 import { RECEIVE_CURRENT_USER } from '../actions/session_actions'; 
 
 export default (state = {}, action) => {

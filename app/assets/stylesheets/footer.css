@@ -1,0 +1,15 @@
+.footer {
+    display: flex;
+    background: #666;
+    margin: 0; 
+    height: 115px;
+    width: 100%;
+}
+
+.smiles {
+    color: white;
+    font-size: 26px;
+    margin-left: 137px;
+    margin-top: 25px;
+    text-shadow: rgba(0,0,0,.4) 0 -2px 0;
+}

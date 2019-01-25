@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
             email: "",
             password: ""
         };
-        push('/');
+        this.props.history.push('/dashboard');
     }
 
     fillForm(field) {
@@ -30,15 +30,32 @@ class SessionForm extends React.Component {
         };
     }
 
+    renderErrors() {
+        let { errors } = this.props; 
+
+        return (
+        <ul>
+        {errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+        </ul>
+        );
+    }
+
 
     render() {
         let { formType, navLink, 
             taglines: { top, first, button }, 
             className: { email, tag, form, submit, t } } = this.props; 
-
         return (
             <div className={formType}>
              <Link to="/"><img className="session-img" src={window.flavicon}/></Link>
+
+             <div className="errors">
+                 {this.renderErrors()}
+             </div>
             <form onSubmit={this.handleSubmit} className={form}>
                 <h2 className={t}>{top}</h2>
 
@@ -50,7 +67,7 @@ class SessionForm extends React.Component {
 
                 <label className={tag}>Here's my <strong>email address</strong> (optional):
                 <br/>
-                <input  className={email} onChange={this.fillForm('email')} type="text" value={this.state.email}/>
+                <input  className={email} onChange={this.fillForm('email')} type="email" value={this.state.email}/>
                 </label>
                 <br/>
 

@@ -1,22 +1,24 @@
-import React from 'react'; 
+import React, { PropTypes } from 'react'; 
 import { Link } from 'react-router-dom';
+import { push } from 'react-router-redux';
 import { connect } from 'react-redux'; 
 import { logout } from '../../actions/session_actions';
 import { withRouter } from "react-router";
-
+import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 
 class Navbar extends React.Component {
     constructor(props) {
         super(props); 
 
-    this.handleClick = this.handleClick.bind(this);
+        this.userLogout = this.userLogout.bind(this);
+
     }
 
-    handleClick(e){
+    userLogout(e) {
         e.preventDefault();
         this.props.logout();
     }
-    
+
 
     render() {
         let { user, location: { pathname } } = this.props; 
@@ -30,14 +32,9 @@ class Navbar extends React.Component {
 
 
           const userHere = (
-               <>
-               <li ><button className="dropdown-user-menu" >{user.username}
-               <b className="carrot"></b></button></li>
-
-               <li>
-                   <button className="btn logout" onClick={this.handleClick}>Log out</button>
-               </li>
-               </>
+               <div className="dropdown-menu">
+                   <button className="btn dropdown" onClick={this.userLogout}>{user.username}</button>
+               </div>
           )
 
          // render login / signup buttons  
@@ -75,7 +72,7 @@ class Navbar extends React.Component {
             </header>
         )
     }
-}
+}                               
 
 const msp = ({ session, entities }) => {
     let user = {}; 
@@ -92,4 +89,4 @@ const mdp = dispatch => ({
 })
 
 
-export default withRouter(connect(msp, mdp)(Navbar)); 
+export default withRouter(connect(msp, mdp)(Navbar));

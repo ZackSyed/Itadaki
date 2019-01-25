@@ -13,7 +13,8 @@ const msp = state => {
         bottom: "forgot your password?", 
         button: "Log in", first: "username:" },
         className: { form: "logmein", email: "em-field", 
-        tag: "empty", submit: "btn log", t: "tip" } 
+        tag: "empty", submit: "btn log", t: "tip" },
+        errors: Object.values(state.errors),
     };
 };
 

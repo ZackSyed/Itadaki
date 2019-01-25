@@ -52,6 +52,7 @@
     border-top: 1px solid #50b195;
     border-bottom: 1px solid #42937c; 
     background:  #5cc4a6;
+    color: #fff;
     box-shadow: #39a385 0px 1px 2px 0px;
     text-shadow: rgba(0,0,0,.4) 0 -1px 0;
     margin-right: 20px; 
@@ -67,6 +68,7 @@
     background: #ff652f;
     border-top: 1px solid #e65928; 
     border-bottom: 1px solid #c14a20;
+    color: #fff;
     box-shadow: #e65928 0px 1px 2px 0px;
     text-shadow: rgba(0,0,0,.4) 0 -1px 0;
  }
@@ -101,4 +103,22 @@
     font-size: 29px;
     font-family: 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;; 
  }
+
+ .dropdown-menu {
+     position: relative;
+     display: inline-block; 
+ }
+
+.dropdown {
+    background-color:#5cc4a6;
+    color: white;
+    padding: 16px;
+    font-size: 16px; 
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown:hover {
+    background-color:#1cb489;
+}
 

@@ -1,0 +1,103 @@
+.dash {
+    position: relative;
+    min-height: 100%;
+    height: 100%;
+    overflow: visible;
+    width: 960px;
+    margin: -33px auto 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.activity-top {
+    margin-top: 52px;
+}
+
+
+.activity-main {
+    border: 1px solid #ccc;
+    background-color: #eeeeee;
+    box-shadow: #e8e8e8 0px 1px 2px 0px;
+    margin-bottom: 30px;
+    margin-top: -16px;
+    height: 60px;
+    width: 560px;
+}
+
+.activity-header {
+    margin-top: 9px;
+    margin-left: 13px;
+}
+
+.activity-center {
+    border: 1px solid #ccc;
+    background-color: #eeeeee;
+    box-shadow: #e8e8e8 0px 1px 2px 0px;
+    width: 560px;
+    height: 671px;
+    margin-top: -31px;
+}
+
+.user-pic {}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 160px;
+    width: 200px;
+    margin-top: 35px;
+    justify-content: space-evenly;
+    margin-right: 15px;
+}
+
+.to-dash {
+    border-radius: 0px !important;
+    text-shadow: none !important;
+    color: gray;
+    width: 122px;
+}
+
+.to-dash:hover {
+    background-color: lightgray;
+}
+
+.rec-act {
+    border-radius: 0px !important;
+    text-shadow: none !important;
+    color: gray;
+    width: 126px;
+}
+
+.rec-act:hover {
+    background-color: lightgray;
+}
+
+.all-exp {
+    border-radius: 0px !important;
+    text-shadow: none !important;
+    color: gray;
+    width: 122px;
+}
+
+.all-exp:hover {
+    background-color: lightgray;
+}
+
+.main-dash-img {
+    height: 20px;
+    width: 20px;
+
+}
+
+.flag {
+    color: gray;
+}
+
+.menu {
+    color: gray;
+}
+
+.user-pic {
+    
+}
