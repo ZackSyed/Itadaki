@@ -5,6 +5,15 @@ class User < ApplicationRecord
     after_initialize :ensure_session_token
     attr_reader :password
 
+    # has_many: groups, 
+    #     through: :tabs, 
+    #     source: :groups
+
+    # has_many: friends, 
+    #     through: :tabs,
+    #     source: :friends
+
+    
     # def self.valid_email?(self.email)
     #     if (self.email.nil?) 
     #         return true 
