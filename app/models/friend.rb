@@ -3,9 +3,9 @@ class Friend < ApplicationRecord
     validates :accepted, inclusion: [true, false], { default: false }
 
 
-    belongs_to :user 
-    belongs_to :friend, 
-        primary_key: :id, 
-        foreign_key: :friend_id, 
-        class_name: :user
+    # belongs_to :user 
+    # belongs_to :friend, 
+    #     primary_key: :id, 
+    #     foreign_key: :friend_id, 
+    #     class_name: :user
 end 
