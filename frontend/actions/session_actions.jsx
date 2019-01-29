@@ -24,8 +24,6 @@ const haveErrors = (errors) => {
     };
 };
 
-// note on bug: the action dispatched to ajax request, then goes into server. 
-// the user object is not being carried to rails????
 export const createNewUser = (user) => dispatch => {
     return ApiSessionUtil.signup(user).then(
     user => dispatch(receiveCurrentUser(user)),
