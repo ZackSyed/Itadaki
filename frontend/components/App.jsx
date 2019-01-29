@@ -8,6 +8,7 @@ import Splash from './splash/splash';
 import GroupFormContainer from './group/groupFormContainer';
 import Footer from './footer/footer';
 import Dashboard from '../components/dashboard/dashboard';
+import Modal from '../components/modal';
 import UserAccountContainer from '../components/user/user_account_container'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -19,6 +20,7 @@ const App = () => (
     <div>    
         <Navbar />
        
+        <Modal />
         <div className="under-nav"> 
         <AuthRoute exact path='/' component={Splash}/>
         <AuthRoute path="/login" component={LoginContainer} />

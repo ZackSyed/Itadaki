@@ -12,7 +12,7 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
-        openModal: () => dispatch(openModal('friendForm')),
+        openModal: () => dispatch(openModal('friend')),
         fetchGroups: () => dispatch(fetchGroups()),
     };
 };

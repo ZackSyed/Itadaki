@@ -1,7 +1,7 @@
 import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
-import GroupFormContainer from '../group/groupFormContainer';
+import AddFriendContainer from '../friend/add_Friend_Container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
@@ -10,7 +10,7 @@ function Modal({modal, closeModal}) {
   let component;
   switch (modal) {
        case 'friend':
-          component = <AddFriend />
+          component = <AddFriendContainer />
           break;
     // case 'tab':
     //   component = <TabFormContainer />;
