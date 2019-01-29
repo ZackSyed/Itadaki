@@ -1,0 +1,54 @@
+.add-new-group { 
+    margin-top: 80px;
+    display: flex;
+    flex-direction: row;
+}
+
+.group-img {
+    height: 200px;
+    width: 200px;
+    margin-left: 400px;
+    margin-top: 127px;
+    margin-right: 17px;
+}
+
+.group-form {
+    display: flex;
+    flex-direction: column; 
+    margin-top: 100px;
+    height: 211px;
+    width: 360px;
+}
+
+.group-form-header {
+    font-size: 18px;
+    text-align: left;
+    color: gray;
+    opacity: 0.8;
+}
+
+.group-tag {
+    font-size: 25px;
+}
+
+.group-name-field {
+    height: 50px;
+    width: 355px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    border: 1px solid #cccccc; 
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    padding: 4px;
+    margin-top: 10px;
+}
+
+.group-submit {
+    font-size: 20px;
+    color: #fff;
+    background: #ff652f;
+    border: 1px solid #e65928;
+    box-shadow: #e65928 0px 1px 2px 0px;
+    margin-right: auto;
+    width: 72px;
+}
+
