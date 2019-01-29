@@ -7,7 +7,6 @@ class Dashboard extends React.Component {
     constructor(props){
         super(props);
 
-        debugger
     // this.handleSubmit = this.handleSubmit.bind(this); 
     }
 
@@ -24,7 +23,7 @@ class Dashboard extends React.Component {
 
     render() {
         const groups = this.props.groups.map( group => {
-            <li key={group.id}>{group}</li>
+            <li key={`groups-${group.id}`}>{group}</li>
         });
 
         return (
