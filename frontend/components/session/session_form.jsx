@@ -1,5 +1,4 @@
 import React from 'react';
-import { push } from 'react-router-redux'; 
 import { Link } from 'react-router-dom';
 
 class SessionForm extends React.Component {

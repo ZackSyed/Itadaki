@@ -5,8 +5,7 @@ import GroupForm from './GroupForm';
 
 const mdp = dispatch => {
     return {
-        createGroup: (group) => dispatch(createGroup(group)),  
-        
+        processForm: (group) => dispatch(createGroup(group)),  
     };
 };
 

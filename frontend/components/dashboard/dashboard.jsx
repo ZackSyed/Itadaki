@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { push } from 'react-router-redux'; 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserSecret, faFlag, faListUl } from '@fortawesome/free-solid-svg-icons';
+import { faUserSecret, faFlag, faListUl, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 class Dashboard extends React.Component {
     constructor(props){
@@ -12,9 +12,15 @@ class Dashboard extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this); 
     }
 
-    handleSubmit(e) {
-
+    componentDidMount(){
+        this.props.fetchGroups();
     }
+
+
+
+    // handleSubmit(e) {
+    //     
+    // }
 
 
     render() {
@@ -27,11 +33,11 @@ class Dashboard extends React.Component {
                     <Link onClick={this.handleSubmit} className="btn all-exp" to="/all"><FontAwesomeIcon icon={faListUl} className="menu" /> All expenses</Link>
                     <div className="add-group">
                         <span className="groups">GROUPS</span>
-                        <Link to="/groups/new"> add</Link>
+                        <Link to="/groups/new"><FontAwesomeIcon icon={faPlus} className="group-add" /> add</Link>
                     </div>
                     <span className="no-groups true">You do not have any groups yet.</span>
                     <div className="add-friends">
-                        <button onClick={this.props.openModal}> add </button>
+                        <button onClick={this.props.openModal}><FontAwesomeIcon icon={faPlus} className="friend-add" /> add </button>
                     </div>
                     <span className="no-friends true">You do not have any groups yet.</span>
                 </div>
@@ -44,7 +50,12 @@ class Dashboard extends React.Component {
                     </div>
                         <div className="activity-center">
                             <FontAwesomeIcon icon={faUserSecret} className="user-pic" />
+                            {/* where the list of tabs info will go. */}
                         </div>
+                </div>
+
+                <div className="dashboard-right-sidebar">
+
                 </div>
             </div>
         )
