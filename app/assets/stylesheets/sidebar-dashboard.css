@@ -1,0 +1,122 @@
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    height: 160px;
+    width: 200px;
+    margin-top: 96px;
+    justify-content: space-evenly;
+    margin-right: 15px;
+}
+
+.to-dash {
+    border-radius: 0px !important;
+    text-shadow: none !important;
+    color: gray;
+    width: 122px;
+}
+
+.to-dash:hover {
+    background-color: lightgray;
+}
+
+
+.rec-act {
+    border-radius: 0px !important;
+    text-shadow: none !important;
+    color: gray;
+    width: 126px;
+}
+
+.rec-act:hover {
+    background-color: lightgray;
+}
+
+.all-exp {
+    border-radius: 0px !important;
+    text-shadow: none !important;
+    color: gray;
+    width: 122px;
+}
+
+.all-exp:hover {
+    background-color: lightgray;
+}
+
+
+.main-dash-img {
+    height: 20px;
+    width: 20px;
+
+}
+
+.flag {
+    color: gray;
+}
+
+.menu {
+    color: gray;
+}
+
+.add-group {
+    margin-top: 21px;
+    margin-bottom: 9px;
+    border: 1px solid #eee;
+    color: gray;
+    background: #eee;
+    text-align: right;
+    font-size: 15px;
+}
+
+.groups {
+    font-size: 12px;
+    margin-right: 112px;
+}
+
+.redir-group {
+    text-decoration: none;
+    color: gray;
+}
+
+.group-add {
+    text-decoration: none;
+    color: gray; 
+}
+
+.no-groups {
+    color: gray;
+    text-align: center;
+    font-size: 12px;
+}
+
+.add-friends {
+    margin-top: 21px;
+    margin-bottom: 9px;
+    border: 1px solid #eee;
+    color: gray;
+    background: #eee;
+    text-align: right;
+    font-size: 15px;
+}
+
+.friends-link {
+    font-size: 12px;
+    margin-right: 111px;
+}
+
+.redir-friend {
+    text-decoration: none;
+    color: gray;
+}
+
+.friend-add {
+    text-decoration: none;
+    color: gray; 
+}
+
+.no-friends {
+    color: gray;
+    text-align: center;
+    font-size: 12px;
+}
+

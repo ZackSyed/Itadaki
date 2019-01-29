@@ -1,0 +1,55 @@
+.add-friend {
+    box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+    border-radius: 6px; 
+    background-color: #ffffff;
+    width: 564px;
+    height: 160px;
+    display: flex;
+    flex-direction: row;
+    position: relative; 
+}
+
+.by-email {
+  border-radius: 6px;
+  background-color: #eee;
+  width: 230px;
+  height: 110px;
+  margin: auto;
+  margin-left: 20px;
+
+}
+
+.by-username {
+  border-radius: 6px;
+  background-color: #eee;
+  width: 230px;
+  height: 110px;
+  margin: auto;
+  margin-right: 20px;
+}
+
+.or {
+  margin: auto;
+  align-content: center;
+  color: gray; 
+}
+
+.email-word {
+  text-align: center;
+} 
+
+.username-words {
+  text-align: center;
+}
+
+.friend-email-icon {
+  color: gray; 
+  margin-left: 100px;
+  margin-top: 11px;
+}
+
+.friend-user-icon {
+  color: gray; 
+  margin-left: 100px;
+  margin-top: 11px;
+}

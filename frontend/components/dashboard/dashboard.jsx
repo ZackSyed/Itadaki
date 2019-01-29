@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserSecret, faFlag, faListUl, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faUserSecret, faFlag, faListUl, faPlus, faUser } from '@fortawesome/free-solid-svg-icons';
 
 class Dashboard extends React.Component {
     constructor(props){
@@ -35,11 +35,12 @@ class Dashboard extends React.Component {
                     <NavLink className="btn all-exp" to="/all"><FontAwesomeIcon icon={faListUl} className="menu" /> All expenses</NavLink>
                     <div className="add-group">
                         <span className="groups">GROUPS</span>
-                        <Link to="/groups/new"><FontAwesomeIcon icon={faPlus} className="group-add" /> add</Link>
+                        <Link to="/groups/new" className="redir-group"><FontAwesomeIcon icon={faPlus} className="group-add" size="xs" /> add</Link>
                     </div>
                     <span className="no-groups true">You do not have any groups yet.</span>
                     <div className="add-friends">
-                        <button onClick={this.props.openModal}><FontAwesomeIcon icon={faPlus} className="friend-add" /> add </button>
+                        <span className="friends-link">FRIENDS</span>
+                        <Link to="" onClick={this.props.openModal} className="redir-friend" ><FontAwesomeIcon icon={faPlus} className="friend-add" size="xs"/> add </Link>
                     </div>
                     <span className="no-friends true">You do not have any groups yet.</span>
                 </div>
@@ -51,7 +52,16 @@ class Dashboard extends React.Component {
                         <Link className="btn sttl" to="/"></Link>
                     </div>
                         <div className="activity-center">
-                            <FontAwesomeIcon icon={faUserSecret} className="user-pic" />
+                            <div className="fresh-user">
+                            <FontAwesomeIcon icon={faUserSecret} className="user-pic" size="8x"/>
+                                <h1>Welcome to Itadaki!</h1>
+                                <p>Itadaki helps you split tabs with friends.</p>
+                                <p>Click "add a tab" above to get started, or invite some friends first!</p>
+                                <Link className="btn activity-add-friends" to="" onClick={this.props.openModal}>
+                                     <FontAwesomeIcon icon={faPlus} className="plus-friend-btn" /> 
+                                     <FontAwesomeIcon icon={faUser} className="friend-btn-user-icon" /> Add friends on Itadaki</Link>
+                            </div>
+
                             {/* where the list of tabs info will go. */}
                         </div>
                 </div>
