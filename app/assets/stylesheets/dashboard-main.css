@@ -32,7 +32,7 @@
 
 .activity-center {
     border: 1px solid #ccc;
-    background-color: #eeeeee;
+    background-color: #ffffff;
     box-shadow: #e8e8e8 0px 1px 2px 0px;
     width: 560px;
     height: 671px;
@@ -40,6 +40,42 @@
 }
 
 .user-pic {
-    margin-top: 100px;
-    margin-left: 85px;
+    margin-top: 57px;
+    margin-left: 26px;
 }
+
+.fresh-user {
+    display: flex;
+    flex-direction: row;
+}
+
+.act-center-words {
+    width: 309px;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-top: -9px;
+    height: 253px;
+}
+
+.activity-add-friends {
+    text-decoration: none;
+    color: white; 
+    background: #ff652f;
+    border: 1px solid #e65928;
+    width: 221px;
+    box-shadow: #e65928 0px 1px 2px 0px;
+    font-size: 18px;
+    height: 26px;
+}
+
+.plus-friend-btn {
+    margin-right: 5px;
+    margin-top: 4px;
+}
+
+.friend-btn-user-icon {
+    margin-right: 5px;
+    margin-top: 4px;
+}
+

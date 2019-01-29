@@ -22,10 +22,13 @@ class Dashboard extends React.Component {
 
 
     render() {
-        const groups = this.props.groups.map( group => {
-            <li key={`groups-${group.id}`}>{group}</li>
-        });
 
+        let { groups } = this.props;
+        const groupli = []; 
+        for (let i = 0; i < groups.length; i+2) {
+            groupli.push(<li key={groups[i]}>{groups[++i]}</li>)
+        }
+    
         return (
             <div className="dash">
                 <div className="sidebar">
@@ -35,12 +38,14 @@ class Dashboard extends React.Component {
                     <NavLink className="btn all-exp" to="/all"><FontAwesomeIcon icon={faListUl} className="menu" /> All expenses</NavLink>
                     <div className="add-group">
                         <span className="groups">GROUPS</span>
-                        <Link to="/groups/new" className="redir-group"><FontAwesomeIcon icon={faPlus} className="group-add" size="xs" /> add</Link>
+                        <Link to="/groups/new" className="redir-group">
+                        <FontAwesomeIcon icon={faPlus} className="group-add" size="xs" /> add</Link>
                     </div>
                     <span className="no-groups true">You do not have any groups yet.</span>
                     <div className="add-friends">
                         <span className="friends-link">FRIENDS</span>
-                        <Link to="" onClick={this.props.openModal} className="redir-friend" ><FontAwesomeIcon icon={faPlus} className="friend-add" size="xs"/> add </Link>
+                        <Link to="" onClick={this.props.openModal} className="redir-friend" >
+                        <FontAwesomeIcon icon={faPlus} className="friend-add" size="xs"/> add </Link>
                     </div>
                     <span className="no-friends true">You do not have any groups yet.</span>
                 </div>
@@ -54,12 +59,14 @@ class Dashboard extends React.Component {
                         <div className="activity-center">
                             <div className="fresh-user">
                             <FontAwesomeIcon icon={faUserSecret} className="user-pic" size="8x"/>
-                                <h1>Welcome to Itadaki!</h1>
-                                <p>Itadaki helps you split tabs with friends.</p>
-                                <p>Click "add a tab" above to get started, or invite some friends first!</p>
-                                <Link className="btn activity-add-friends" to="" onClick={this.props.openModal}>
-                                     <FontAwesomeIcon icon={faPlus} className="plus-friend-btn" /> 
-                                     <FontAwesomeIcon icon={faUser} className="friend-btn-user-icon" /> Add friends on Itadaki</Link>
+                                <div className="act-center-words">
+                                    <h1>Welcome to Itadaki!</h1>
+                                    <p>Itadaki helps you split tabs with friends.</p>
+                                    <p>Click "add a tab" above to get started, or invite some friends first!</p>
+                                    <Link className="btn activity-add-friends" to="" onClick={this.props.openModal}>
+                                        <FontAwesomeIcon icon={faPlus} className="plus-friend-btn" /> 
+                                        <FontAwesomeIcon icon={faUser} className="friend-btn-user-icon" /> Add friends on Itadaki</Link>
+                                </div>
                             </div>
 
                             {/* where the list of tabs info will go. */}
@@ -67,8 +74,9 @@ class Dashboard extends React.Component {
                 </div>
 
                 <div className="dashboard-right-sidebar">
-                    <ul>
-                        {groups}
+                    <h1>List of your groups</h1>
+                    <ul className="groups-holder">
+                       {groupli}
                     </ul>
                 </div>
             </div>
