@@ -1,8 +1,9 @@
 class Api::UsersController < ApplicationController 
      
     def index
-        @friends = Friend.all
-        render :index 
+        all_friends = Friend.all
+        @friends = all_friends.select { |friend| friend.user_id == current_user.id }
+        render :index @friends
     end  
 
     def show
