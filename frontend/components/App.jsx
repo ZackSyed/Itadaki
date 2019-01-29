@@ -7,8 +7,8 @@ import Navbar from './navbar/navbar';
 import Splash from './splash/splash';
 import GroupFormContainer from './group/groupFormContainer';
 import Footer from './footer/footer';
-import Dashboard from '../components/dashboard/dashboard';
-import Modal from '../components/modal';
+import DashboardContainer from '../components/dashboard/dashboard_container';
+import Modal from '../components/modal/modal';
 import UserAccountContainer from '../components/user/user_account_container'
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -18,14 +18,14 @@ library.add(faUserSecret);
 
 const App = () => (
     <div>    
+        <Modal />
         <Navbar />
        
-        <Modal />
         <div className="under-nav"> 
         <AuthRoute exact path='/' component={Splash}/>
         <AuthRoute path="/login" component={LoginContainer} />
         <AuthRoute path="/signup" component={SignupContainer} />
-        <ProtectedRoute path="/dashboard" component={Dashboard} />
+        <ProtectedRoute path="/dashboard" component={DashboardContainer} />
         <ProtectedRoute path="/account" component={UserAccountContainer} />
         <ProtectedRoute path="/groups/new" component={GroupFormContainer} />
         </div>

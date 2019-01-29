@@ -1,7 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; 
-import { push } from 'react-router-redux'; 
-import { library } from '@fortawesome/fontawesome-svg-core';
+import { Link, NavLink } from 'react-router-dom'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserSecret, faFlag, faListUl, faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -9,7 +7,8 @@ class Dashboard extends React.Component {
     constructor(props){
         super(props);
 
-    this.handleSubmit = this.handleSubmit.bind(this); 
+        debugger
+    // this.handleSubmit = this.handleSubmit.bind(this); 
     }
 
     componentDidMount(){
@@ -24,18 +23,17 @@ class Dashboard extends React.Component {
 
 
     render() {
-
         const groups = this.props.groups.map( group => {
             <li key={group.id}>{group}</li>
         });
-
+        
         return (
             <div className="dash">
                 <div className="sidebar">
                     <Link to="/account">Go To Account</Link>
-                    <Link onClick={this.handleSubmit} className="btn to-dash" to="/dashboard"><img className="main-dash-img" src={window.flavicon}/> Dashboard</Link>
-                    <Link onClick={this.handleSubmit} className="btn rec-act" to="/activity"><FontAwesomeIcon icon={faFlag} className="flag" /> Recent activity</Link>
-                    <Link onClick={this.handleSubmit} className="btn all-exp" to="/all"><FontAwesomeIcon icon={faListUl} className="menu" /> All expenses</Link>
+                    <NavLink className="btn to-dash" to="/dashboard"><img className="main-dash-img" src={window.flavicon}/> Dashboard</NavLink>
+                    <NavLink className="btn rec-act" to="/activity"><FontAwesomeIcon icon={faFlag} className="flag" /> Recent activity</NavLink>
+                    <NavLink className="btn all-exp" to="/all"><FontAwesomeIcon icon={faListUl} className="menu" /> All expenses</NavLink>
                     <div className="add-group">
                         <span className="groups">GROUPS</span>
                         <Link to="/groups/new"><FontAwesomeIcon icon={faPlus} className="group-add" /> add</Link>

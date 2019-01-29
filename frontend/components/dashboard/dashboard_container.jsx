@@ -4,15 +4,13 @@ import { openModal } from '../../actions/modal_actions';
 import { fetchGroups } from '../../actions/group_actions';
 import Dashboard from './dashboard';
 
-const msp = state => {
-    return {
-        groups: Object.values(entities.groups)
-    };
-};
+const msp = ({ entities }) => ({
+    groups: Object.values(entities.groups),
+});
 
-const mdp = dispatch => {
-    return {
+const mdp = dispatch => ({
         openModal: () => dispatch(openModal('friend')),
         fetchGroups: () => dispatch(fetchGroups()),
-    };
-};
+});
+
+export default connect(msp, mdp)(Dashboard);

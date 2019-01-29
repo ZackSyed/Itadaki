@@ -22,3 +22,5 @@ class AddFriend extends React.Component {
         )
     }
 }
+
+export default AddFriend;

@@ -1,13 +1,12 @@
 import * as ApiGroupUtil from '../util/group_api_util'; 
 
-export const RECEIVE_ALL_GROUPS = 'RECEIVE_ALL_GROUPS';
+export const RECEIVE_GROUPS = 'RECEIVE_ALL_GROUPS';
 export const RECEIVE_GROUP = 'RECEIVE_GROUP';
-export const CREATE_GROUP = 'CREATE_GROUP'; 
 export const DELETE_GROUP = 'DELETE_GROUP'; 
 
 const receiveGroups = (groups) => {
     return {
-        type: RECEIVE_ALL_GROUPS,
+        type: RECEIVE_GROUPS,
         groups,
     };
 };
@@ -40,7 +39,7 @@ export const createGroup = (group) => dispatch => {
         dispatch(receiveGroup(group)));
 };
 
-export const deleteGroup = (id) => dispatch => {
+export const removeGroup = (id) => dispatch => {
     return ApiGroupUtil.deleteGroup(id).then( () => 
     dispatch(deleteGroup()));
 };

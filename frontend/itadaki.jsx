@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 import Root from './components/root';
 import * as SessionApi from './util/session_api_util';
 import { createNewUser } from './actions/session_actions';
+import * as groupApi from './util/group_api_util';
+import { fetchGroups } from './actions/group_actions';
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -29,6 +31,8 @@ document.addEventListener("DOMContentLoaded", () => {
     window.getState = store.getState; 
     window.dispatch = store.dispatch; 
     window.create = createNewUser; 
+    window.groups = groupApi.fetchGroups;
+    window.fetchGroups = fetchGroups; 
     // TESTING END 
 
     const root = document.getElementById('root');
