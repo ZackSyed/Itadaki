@@ -9,9 +9,6 @@ function Modal({modal, closeModal}) {
   }
   let component;
   switch (modal) {
-    case 'group':
-      component = <GroupFormContainer />;
-      break;
     // case 'tab':
     //   component = <TabFormContainer />;
     //   break;

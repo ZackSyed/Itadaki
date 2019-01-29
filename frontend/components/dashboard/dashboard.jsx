@@ -18,7 +18,6 @@ class Dashboard extends React.Component {
 
 
     render() {
-        debugger
         return (
             <div className="dash">
                 <div className="sidebar">
@@ -26,6 +25,15 @@ class Dashboard extends React.Component {
                     <Link onClick={this.handleSubmit} className="btn to-dash" to="/dashboard"><img className="main-dash-img" src={window.flavicon}/> Dashboard</Link>
                     <Link onClick={this.handleSubmit} className="btn rec-act" to="/activity"><FontAwesomeIcon icon={faFlag} className="flag" /> Recent activity</Link>
                     <Link onClick={this.handleSubmit} className="btn all-exp" to="/all"><FontAwesomeIcon icon={faListUl} className="menu" /> All expenses</Link>
+                    <div className="add-group">
+                        <span className="groups">GROUPS</span>
+                        <Link to="/groups/new"> add</Link>
+                    </div>
+                    <span className="no-groups true">You do not have any groups yet.</span>
+                    <div className="add-friends">
+                        <button onClick={this.props.openModal}> add </button>
+                    </div>
+                    <span className="no-friends true">You do not have any groups yet.</span>
                 </div>
 
                 <div className="activity-top"> 
