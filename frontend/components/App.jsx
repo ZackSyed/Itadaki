@@ -5,6 +5,7 @@ import LoginContainer from './session/login_container';
 import SignupContainer from './session/signup_container';
 import Navbar from './navbar/navbar';
 import Splash from './splash/splash';
+import GroupFormContainer from './group/groupFormContainer';
 import Footer from './footer/footer';
 import Dashboard from '../components/dashboard/dashboard';
 import UserAccountContainer from '../components/user/user_account_container'
@@ -19,11 +20,12 @@ const App = () => (
         <Navbar />
        
         <div className="under-nav"> 
-        <Route exact path='/' component={Splash}/>
+        <AuthRoute exact path='/' component={Splash}/>
         <AuthRoute path="/login" component={LoginContainer} />
         <AuthRoute path="/signup" component={SignupContainer} />
         <ProtectedRoute path="/dashboard" component={Dashboard} />
         <ProtectedRoute path="/account" component={UserAccountContainer} />
+        <ProtectedRoute path="/groups/new" component={GroupFormContainer} />
         </div>
 
         <div className="below-component">

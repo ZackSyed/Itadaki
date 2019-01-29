@@ -24,6 +24,11 @@ class Dashboard extends React.Component {
 
 
     render() {
+
+        const groups = this.props.groups.map( group => {
+            <li key={group.id}>{group}</li>
+        });
+
         return (
             <div className="dash">
                 <div className="sidebar">
@@ -55,7 +60,9 @@ class Dashboard extends React.Component {
                 </div>
 
                 <div className="dashboard-right-sidebar">
-
+                    <ul>
+                        {groups}
+                    </ul>
                 </div>
             </div>
         )

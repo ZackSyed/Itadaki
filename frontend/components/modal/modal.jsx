@@ -9,6 +9,9 @@ function Modal({modal, closeModal}) {
   }
   let component;
   switch (modal) {
+       case 'friend':
+          component = <AddFriend />
+          break;
     // case 'tab':
     //   component = <TabFormContainer />;
     //   break;
