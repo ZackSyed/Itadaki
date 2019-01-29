@@ -1,7 +1,7 @@
 class Api::GroupsController < ApplicationController 
 
     def create 
-        @group = Group.new(group_params)
+        @group = Group.create(group_params)
         if @group
             render :show  
         else 

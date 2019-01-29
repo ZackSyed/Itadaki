@@ -25,30 +25,12 @@ class GroupForm extends React.Component {
         };
     }
 
-    renderErrors() {
-        let { errors } = this.props; 
-
-        return (
-        <ul>
-        {errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-        </ul>
-        );
-    }
-
-
     render() {
 
         return (
             <div className="add-new-group">
-             <Link to="/"><img className="group-img" src={window.flavicon}/></Link>
-
-             <div className="errors">
-                 {this.renderErrors()}
-             </div>
+             <Link to="/dashboard"><img className="group-img" src={window.flavicon}/></Link>
+             
             <form onSubmit={this.handleSubmit} className="group-form">
                 <h2 className="group-form-header">START A NEW GROUP</h2>
 
