@@ -21,6 +21,12 @@ class Api::UsersController < ApplicationController
         end 
     end 
 
+    def searchUsername
+    end 
+
+    def searchEmail
+    end 
+
     def friend_params 
         params.require(:friend).permit(:friend_id)
     end 

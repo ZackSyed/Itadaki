@@ -27,13 +27,13 @@ const haveErrors = (errors) => {
 export const createNewUser = (user) => dispatch => {
     return ApiSessionUtil.signup(user).then(
     user => dispatch(receiveCurrentUser(user)),
-    errors => dispatch(haveErrors(errors.responseJSON))); 
+    error => dispatch(haveErrors(error.responseJSON))); 
 };
 
 export const loginUser = formUser => dispatch => ApiSessionUtil.login(formUser)
     .then( user => dispatch(receiveCurrentUser(user)),
-    errors => dispatch(haveErrors(errors.responseJSON)));
+    error => dispatch(haveErrors(error.responseJSON)));
 
 export const logout = () => dispatch => ApiSessionUtil.logout()
     .then(() => dispatch(logoutCurrentUser()),
-    errors => dispatch(haveErrors(errors.responseJSON)));
+    error => dispatch(haveErrors(error.responseJSON)));

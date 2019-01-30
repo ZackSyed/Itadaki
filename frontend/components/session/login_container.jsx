@@ -9,7 +9,7 @@ const msp = state => {
     return {
         formType: 'log-in', 
         navLink: <Link to='/signup'>Make an account</Link>,
-        taglines: { top: "WELCOME TO SPLITWISE", 
+        taglines: { top: "WELCOME TO ITADAKI", 
         bottom: "forgot your password?", 
         button: "Log in", first: "username:" },
         className: { form: "logmein", email: "em-field", 
