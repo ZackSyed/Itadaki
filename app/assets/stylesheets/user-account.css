@@ -1,0 +1,59 @@
+.info {
+    margin-top: 10px; 
+    display: flex;
+    flex-direction: row;
+}
+
+.account-info {
+    width: 230px;
+    height: 350px; 
+    display: flex;
+    flex-direction: column;
+    margin-left: 100px;
+    margin-top: 12px;
+}
+
+.account-header {
+    margin-left: 16px;
+    font-size: 31px;
+    margin-bottom: 31px;
+}
+
+.account-img-border {
+    border: 1px solid #eee;
+    background-color: #eee;
+    height: 200px;
+    width: 200px;
+    margin-left: 16px;
+    margin-top: -14px;
+}
+
+.account-pic {
+    background-color: #eee; 
+    margin-left: 20px; 
+    height: 200px;
+    margin-left: 41px;
+}
+
+.account-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 230px;
+    width: 200px;
+    margin-top: 58px;
+}
+
+.account-list li {
+    text-decoration: none; 
+    margin-left: -27px;
+    margin-top: 18px;
+    font-size: 15px;
+}
+
+.ac-pen {
+    color: blue; 
+    text-decoration: none;
+    margin-right: 2px;
+    margin-left: 19px;
+}

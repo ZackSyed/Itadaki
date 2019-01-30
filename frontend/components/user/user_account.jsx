@@ -1,29 +1,33 @@
 import React from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserSecret, faFlag, faListUl, faPen } from '@fortawesome/free-solid-svg-icons';
+import { faUserSecret, faEnvelope, faPen } from '@fortawesome/free-solid-svg-icons';
 
 class UserAccount extends React.Component {
     constructor(props){
         super(props); 
 
     }
-
+                                
     render(){
         let { user } = this.props; 
         // add links when those features are flushed out!!!!!!!!!
         return (
-            <div className="info">
-            <h1>Your account</h1>
-            <FontAwesomeIcon icon={faUserSecret} className="account-pic" />
+        
+        <div className="info">
+            <div className="account-info">
+                <h1 className="account-header">Your account</h1>
+                <div className="account-img-border">
+                    <FontAwesomeIcon icon={faUserSecret} className="account-pic" size="8x" />
+                </div>
+            </div>
             <ul className="account-list">
-                <li>your name</li>
-                <li>{user.username}<FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
-                <li>your email address</li>
-                <li>{user.email ? user.email : "None"} <FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
-                <li>Your password</li>
-                <li>........ <FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
-                <li></li>
+                <li className="list-header">your name</li>
+                <li><strong>{user.username}</strong><FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
+                <li className="list-header">your email address</li>
+                <li><strong>{user.email ? user.email : "None"}</strong> <FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
+                <li className="list-header">Your password</li>
+                <li><strong className="password">........</strong><FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
             </ul>
 
         </div>
