@@ -14,3 +14,4 @@ export const fetchFriends = () => {
     return ApiFriendUtil.fetchFriends().then( friends => 
         dispatch(receiveFriends(friends)));
 };
+

@@ -1,6 +1,6 @@
 class Friend < ApplicationRecord 
     validates :friend_id, :user_id, presence: true 
-    validates :accepted, inclusion: [true, false], { default: false }
+    validates :accepted, inclusion: [true, false]
 
 
     belongs_to :user 

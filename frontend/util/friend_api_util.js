@@ -4,3 +4,4 @@ const fetchFriends = () => {
         url: 'api/friends'
     });
 };
+
