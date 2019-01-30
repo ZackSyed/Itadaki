@@ -31,17 +31,16 @@ class SearchBy extends React.Component {
 
     render() {
         return (
-            <div className="Search-me">
-                <h1><img className="inv-img" src={window.flavicon}/>Invite friends</h1>
-                <div>
-                    <form onSubmit={this.handleSubmit}>
-                        <input className="inv-user-field"  onChange={this.fillForm('searchTerm')} type="text" value=""/>
+            <div className="search-me">
+                
+                <h1 className="inv-tag"><img className="inv-img" src={window.flavicon}/> Invite friends</h1> 
+                    <form onSubmit={this.handleSubmit} className="inv-form">
+                        <input className="inv-user-field"  onChange={this.fillForm('searchTerm')} type="text" value="To: " placeholder={this.props.top} />
 
                         <input className="inv-message" onChange={this.fillForm('body')} type="text-area" value="" placeholder="Include an optional message" />
 
                         <input className="btn inv-friends-btn" type="submit" value="Send invites and add friends" />
                     </form>
-                </div>
             </div>
         )
     }

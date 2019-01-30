@@ -1,0 +1,59 @@
+.search-me {
+    background: #ffffff;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    width: 563px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 4px;
+}
+
+.inv-tag {
+    font-size: 23px;
+    margin-top: -18px;
+    margin-bottom: 30px;
+}
+
+.inv-img {
+    height: 30px;
+    width: 30px;
+    margin-top: 23px;
+    margin-left: 23px;
+}
+
+.inv-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.inv-user-field {
+    border: 1px solid black;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    height: 50px;
+    width: 510px;
+    margin-left: 17px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.inv-message {
+    border: 1px solid black;
+    margin-left: 17px;
+    width: 510px;
+    height: 71px;
+    border-radius: 6px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.inv-friends-btn {
+    background: #ff652f;
+    border: 1px solid #c14a20;
+    color: #fff;
+    width: 250px;
+    height: 41px;
+    margin-left: auto;
+    margin-right: 35px;
+    margin-top: 13px;
+    box-shadow: #e65928 0px 1px 2px 0px;
+    text-shadow: rgba(0,0,0,.4) 0 -1px 0;
+}
