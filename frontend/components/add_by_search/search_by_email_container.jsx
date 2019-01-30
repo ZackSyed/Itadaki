@@ -1,7 +1,7 @@
 import React from 'react'
-import { connect } from 'redux';
+import { connect } from 'react-redux';
 import SearchBy from './search_by';
-
+import { createFriend } from '../../actions/friend_actions';
 
 const msp = state => ({
     top: 'email',
