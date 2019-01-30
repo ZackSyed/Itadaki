@@ -17,8 +17,9 @@ class SearchByEmail extends React.Component {
     }
 
     handleSubmit(e) {
+        let { user_id } = this.props; 
         e.preventDefault();
-        this.props.createFriend(this.state);
+        this.props.createFriend(this.state.username, user_id);
         this.setState = {
             email: "",
             body: ""
@@ -49,12 +50,12 @@ class SearchByEmail extends React.Component {
 }
 
 const msp = state => ({
-    top: 'email',
+    user_id: state.entities.users[state.session.id].id,
 });
 
 const mdp = dispatch => ({
     createFriend: () => dispatch(createFriend()),
-    // findUserByEmail: (email) => dispatch(findUserByEmail(email)),
+    findUserByEmail: (email) => dispatch(findUserByEmail(email)),
 });
 
 export default connect(msp, mdp)(SearchByEmail); 
