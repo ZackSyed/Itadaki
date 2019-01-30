@@ -1,24 +1,25 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { createFriend } from '../../actions/friend_actions';
 
-class SearchBy extends React.Component {
+class SearchByUsername extends React.Component {
 
     constructor(props){
         super(props);
 
         this.state = {
-            searchTerm: "",
+            username: "",
             body: ""
         };
 
         this.handleSubmit = this.handleSubmit.bind(this); 
-        this.fillForm = this.fillForm.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
         this.props.createFriend(this.state);
         this.setState = {
-            searchTerm: "",
+            username: "",
             body: ""
         };
     }
@@ -35,9 +36,9 @@ class SearchBy extends React.Component {
                 
                 <h1 className="inv-tag"><img className="inv-img" src={window.flavicon}/> Invite friends</h1> 
                     <form onSubmit={this.handleSubmit} className="inv-form">
-                        <input className="inv-user-field"  onChange={this.fillForm('searchTerm')} type="text" value="To: " placeholder={this.props.top} />
+                        <input className="inv-user-field"  onChange={this.fillForm('username')} type="text" value={this.state.username}/>
 
-                        <input className="inv-message" onChange={this.fillForm('body')} type="text-area" value="" placeholder="Include an optional message" />
+                        <input className="inv-message" onChange={this.fillForm('body')} type="text-area" value={this.state.body} />
 
                         <input className="btn inv-friends-btn" type="submit" value="Send invites and add friends" />
                     </form>
@@ -46,4 +47,14 @@ class SearchBy extends React.Component {
     }
 }
 
-export default SearchBy; 
+
+const msp = state => ({
+    top: 'username', 
+});
+
+const mdp = dispatch => ({
+    createFriend: () => dispatch(createFriend()),
+    // findUser: (username) => dispatch(findUser(username)),
+});
+
+export default connect(msp, mdp)(SearchByUsername); 

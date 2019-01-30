@@ -28,11 +28,11 @@ const haveErrors = (errors) => {
 export const fetchUsers = () => dispatch => {
     return ApiUserUtil.fetchUsers().then( users => 
         dispatch(receiveUsers(users)),
-        errors => dispatch(haveErrors(errors.responseJSON)));
+        error => dispatch(haveErrors(error.responseJSON)));
 }; 
 
 export const fetchUser = (id) => dispatch => {
     return ApiUserUtil.fetchUser(id).then( user =>
         dispatch(receiveUser(user)),
-        errors => dispatch(haveErrors(errors.responseJSON)));
+        error => dispatch(haveErrors(error.responseJSON)));
 };
