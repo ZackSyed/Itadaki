@@ -1,7 +1,8 @@
-export const fetchFriends = () => {
+export const fetchFriends = (currentUserId) => {
     return $.ajax({
         method: 'get',
-        url: 'api/friends'
+        url: 'api/friends',
+        data: { currentUserId }
     });
 };
 
@@ -20,11 +21,3 @@ export const createEFriend = (email) => {
         data: { email }
     });
 };
-
-// export const searchFriend = (username) => {
-//     return $.ajax({
-//         method: 'get',
-//         url: 'api/users/search',
-//         data: { username }
-//     });
-// };

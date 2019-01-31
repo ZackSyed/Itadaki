@@ -1,7 +1,8 @@
 class Api::FriendsController < ApplicationController 
      
     def index
-        @friends = Friend.where({ user_id: current_user.id }).or({ friend_id: current_user.id })
+        debugger
+        @friends = Friend.where({ user_id: params[:currentUserId] })
         render :index 
     end  
 
@@ -12,17 +13,12 @@ class Api::FriendsController < ApplicationController
 
     def create 
         @friend = Friend.new
-        debugger
         if params[:username] 
             @friend.friend_id = searchU(params[:username])
-            debugger
             @friend.user_id = current_user.id 
-            debugger
             @friend.save
-            debugger
             render :show
         elsif params[:email]
-            debugger
             @friend.friend_id = searchE(params[:email])
             @friend.user_id = current_user.id 
             @friend.save

@@ -29,10 +29,10 @@ class SearchByUsername extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.createFriend(this.state.username);
-        this.setState = {
+        this.setState = ({
             username: "",
             body: ""
-        };
+        });
     }
 
     fillForm(field){

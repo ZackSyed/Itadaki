@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom'; 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserSecret, faFlag, faListUl, faPlus, faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUserSecret, faUsers, faFlag, faListUl, faPlus, faUser, faTag } from '@fortawesome/free-solid-svg-icons';
 
 class Dashboard extends React.Component {
     constructor(props){
@@ -12,9 +12,12 @@ class Dashboard extends React.Component {
 
     componentDidMount(){
         this.props.fetchGroups();
+        // this.props.fetchFriends();
     }
 
-
+    // componentDidUpdate(prevProps){
+    //     debugger
+    // }
 
     // handleSubmit(e) {
     //     
@@ -25,10 +28,16 @@ class Dashboard extends React.Component {
 
         let { groups } = this.props;
         const groupli = []; 
-        for (let i = 0; i < groups.length; i+2) {
-            groupli.push(<li key={groups[i]}>{groups[++i]}</li>)
+        for (let i = 0; i < groups.length - 1; i+2) {
+            groupli.push(<li key={groups[i]} className="group-side-name" ><FontAwesomeIcon icon={faUsers} className="group-side-tag" />{groups[++i]}</li>)
         }
-    
+
+        const groupTag = [];
+        for (let i = 0; i < groups.length - 1; i+2) {
+            groupTag.push(<li key={groups[i]} className="left-side-group-display"><FontAwesomeIcon icon={faTag} className="group-tag" size="xs" color="green" />{groups[++i]}</li>)
+        }
+
+
         return (
             <div className="dash">
                 <div className="sidebar">
@@ -41,7 +50,10 @@ class Dashboard extends React.Component {
                         <Link to="/groups/new" className="redir-group">
                         <FontAwesomeIcon icon={faPlus} className="group-add" size="xs" /> add</Link>
                     </div>
-                    <span className="no-groups true">You do not have any groups yet.</span>
+                    <span className={groupli ? "group" : "no-group"}>You do not have any groups yet.</span>
+                    <ul className={groupli ? "tag-group" : "no-g"}>
+                        {groupTag}
+                    </ul>
                     <div className="add-friends">
                         <span className="friends-link">FRIENDS</span>
                         <Link to="" onClick={this.props.openModal} className="redir-friend" >
@@ -74,7 +86,7 @@ class Dashboard extends React.Component {
                 </div>
 
                 <div className="dashboard-right-sidebar">
-                    <h1>List of your groups</h1>
+                    <h1 className="right-side-header">GROUP BALANCES</h1>
                     <ul className="groups-holder">
                        {groupli}
                     </ul>
