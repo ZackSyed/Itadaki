@@ -26,7 +26,7 @@ class Dashboard extends React.Component {
 
     render() {
 
-        let { groups, friends, cUId } = this.props;
+        let { groups, friends, cUId, users } = this.props;
         const groupli = []; 
             for (let i = 0; i < groups.length - 1; i+2) {
                 groupli.push(<li key={`groups-${[i]}`} className="group-side-name" ><FontAwesomeIcon icon={faUsers} className="group-side-tag" />{groups[++i]}</li>)
@@ -39,9 +39,9 @@ class Dashboard extends React.Component {
 
             
         const friendList = [];
-        for (let i = 0; i < friends.length; i++) {
-            if (friends[i].id !== cUId) {
-                friendList.push(<li key={`friends-${[i]}`} className="u-have-friends"><FontAwesomeIcon icon={faUser} className="friend-side-tag" /> {friends[i].username}</li>)
+        for (let i = 0; i < users.length; i++) {
+            if (users[i].id !== cUId && friends.includes(`${users[i].id}`)) {
+                friendList.push(<li key={`friends-${[i]}`} className="u-have-friends"><FontAwesomeIcon icon={faUser} className="friend-side-tag" /> {users[i].username}</li>)
             }
         }
 
