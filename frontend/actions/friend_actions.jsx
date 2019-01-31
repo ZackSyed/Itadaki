@@ -32,7 +32,7 @@ export const fetchFriends = () => dispatch => {
         error => dispatch(receiveErrors(error.responseJSON)));
 };
 
-export const createFriend = (param) => dispatch => {
+export const createFriend = (param) => dispatch => { 
     return ApiFriendUtil.createFriend(param).then( friend => 
         dispatch(receiveFriend(friend)),
         error => dispatch(receiveErrors(error.responseJSON)));

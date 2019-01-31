@@ -14,6 +14,16 @@ class ApplicationController < ActionController::Base
         !!current_user
     end 
 
+    def searchU(username)
+        @user = User.find_by(username: username)  
+        return @user.id
+    end 
+
+    def searchE(email)
+        @user = User.find_by(email: email)  
+        return @user.id
+    end
+
     def logout 
         current_user.reset_token!
         @current_user = nil 

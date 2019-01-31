@@ -12,16 +12,20 @@ class Api::FriendsController < ApplicationController
 
     def create 
         @friend = Friend.new
+        debugger
         if params[:username] 
-            user = User.find_by(username: params[:username])
-            @friend.friend_id = user.id 
+            @friend.friend_id = searchU(params[:username])
+            debugger
             @friend.user_id = current_user.id 
+            debugger
+            @friend.save
+            debugger
+            render :show
         elsif params[:email]
-            user = User.find_by(email: params[:email])
-            @friend.friend_id = user.id 
+            debugger
+            @friend.friend_id = searchE(params[:email])
             @friend.user_id = current_user.id 
-        end
-        if @friend.save
+            @friend.save
             render :show
         else 
             render json: ["User does not exist/already a friend"]

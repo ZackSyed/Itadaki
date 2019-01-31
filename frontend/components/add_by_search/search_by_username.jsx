@@ -8,7 +8,7 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
-    createFriend: () => dispatch(createFriend()),
+    createFriend: (username) => dispatch(createFriend(username)),
 });
 
 

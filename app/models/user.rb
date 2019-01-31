@@ -9,8 +9,10 @@ class User < ApplicationRecord
     #     through: :tabs, 
     #     source: :groups
 
-    has_many :friends
-
+    has_many :friends 
+        # primary_key: :id,
+        # foreign_key: :user_id,
+        # class_name: :Friend
     
     # def self.valid_email?(self.email)
     #     if (self.email.nil?) 
