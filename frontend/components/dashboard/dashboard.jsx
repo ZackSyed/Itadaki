@@ -12,7 +12,7 @@ class Dashboard extends React.Component {
 
     componentDidMount(){
         this.props.fetchGroups();
-        // this.props.fetchFriends();
+        this.props.fetchFriends(this.props.cUId);
     }
 
     // componentDidUpdate(prevProps){
@@ -26,17 +26,24 @@ class Dashboard extends React.Component {
 
     render() {
 
-        let { groups } = this.props;
+        let { groups, friends, cUId } = this.props;
         const groupli = []; 
-        for (let i = 0; i < groups.length - 1; i+2) {
-            groupli.push(<li key={groups[i]} className="group-side-name" ><FontAwesomeIcon icon={faUsers} className="group-side-tag" />{groups[++i]}</li>)
-        }
+            for (let i = 0; i < groups.length - 1; i+2) {
+                groupli.push(<li key={`groups-${[i]}`} className="group-side-name" ><FontAwesomeIcon icon={faUsers} className="group-side-tag" />{groups[++i]}</li>)
+            }
 
         const groupTag = [];
-        for (let i = 0; i < groups.length - 1; i+2) {
-            groupTag.push(<li key={groups[i]} className="left-side-group-display"><FontAwesomeIcon icon={faTag} className="group-tag" size="xs" color="green" />{groups[++i]}</li>)
-        }
+            for (let i = 0; i < groups.length - 1; i+2) {
+                groupTag.push(<li key={`groupss-${[i]}`} className="left-side-group-display"><FontAwesomeIcon icon={faTag} className="group-tag" size="xs" />{groups[++i]}</li>)
+            }
 
+            
+        const friendList = [];
+        for (let i = 0; i < friends.length; i++) {
+            if (friends[i].id !== cUId) {
+                friendList.push(<li key={`friends-${[i]}`} className="u-have-friends"><FontAwesomeIcon icon={faUser} className="friend-side-tag" /> {friends[i].username}</li>)
+            }
+        }
 
         return (
             <div className="dash">
@@ -51,22 +58,29 @@ class Dashboard extends React.Component {
                         <FontAwesomeIcon icon={faPlus} className="group-add" size="xs" /> add</Link>
                     </div>
                     <span className={groupli ? "group" : "no-group"}>You do not have any groups yet.</span>
-                    <ul className={groupli ? "tag-group" : "no-g"}>
-                        {groupTag}
-                    </ul>
+                    <div>
+                        <ul className={groupli ? "tag-group" : "no-g"}>
+                            {groupTag}
+                        </ul>
+                    </div>
                     <div className="add-friends">
                         <span className="friends-link">FRIENDS</span>
                         <Link to="" onClick={this.props.openModal} className="redir-friend" >
                         <FontAwesomeIcon icon={faPlus} className="friend-add" size="xs"/> add </Link>
                     </div>
-                    <span className="no-friends true">You do not have any groups yet.</span>
+                    <span className={friendList ? "yes-friends" : "no-friends"}>You do not have any groups yet.</span>
+                        <div className="add-friends-here">
+                            <ul className="add-friends-list">
+                                {friendList}
+                            </ul>
+                        </div>
                 </div>
 
                 <div className="activity-top"> 
                     <div className="activity-main">  
                         <h1 className="activity-header">Dashboard</h1>
-                        <Link className="btn bill" to="/"></Link>
-                        <Link className="btn sttl" to="/"></Link>
+                        <Link className="btn bill" to="/">Add a bill</Link>
+                        <Link className="btn sttl" to="/">settle up</Link>
                     </div>
                         <div className="activity-center">
                             <div className="fresh-user">

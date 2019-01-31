@@ -1,7 +1,6 @@
 class Api::FriendsController < ApplicationController 
      
     def index
-        debugger
         @friends = Friend.where({ user_id: params[:currentUserId] })
         render :index 
     end  

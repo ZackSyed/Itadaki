@@ -23,6 +23,7 @@
     margin-top: -16px;
     height: 60px;
     width: 560px;
+    display: flex;
 }
 
 .activity-header {
@@ -60,7 +61,7 @@
 
 .activity-add-friends {
     text-decoration: none;
-    color: white; 
+    color: white;
     background: #ff652f;
     border: 1px solid #e65928;
     width: 221px;
@@ -79,3 +80,30 @@
     margin-top: 4px;
 }
 
+.bill {
+    font-size: 16px;
+    border: 1px solid #e65828;
+    background: #ff652f;
+    color: white;
+    height: 33px;
+    width: 89px;
+    margin-top: 11px;
+    margin-left: 180px;
+    box-sizing: border-box;
+    box-shadow: #e65928 0px 1px 2px 0px;
+    text-shadow: rgba(0,0,0,.4) 0 -1px 0;
+}
+
+.sttl {
+    font-size: 16px;
+    border-top: 1px solid #50b195;
+    border-bottom: 1px solid #42937c; 
+    background:  #5cc4a6;
+    color: #fff;
+    box-shadow: #39a385 0px 1px 2px 0px;
+    text-shadow: rgba(0,0,0,.4) 0 -1px 0;
+    width: 66px;
+    height: 21px;
+    margin-top: 11px;
+    margin-left: 22px;
+}

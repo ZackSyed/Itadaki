@@ -3,7 +3,7 @@
     flex-direction: column;
     height: 160px;
     width: 200px;
-    margin-top: 96px;
+    margin-top: 110px;
     justify-content: space-evenly;
     margin-right: 15px;
 }
@@ -100,10 +100,10 @@
 }
 
 .left-side-group-display {
-    font-size: 16px; 
+    font-size: 16px;
     color: #5bc5a7;
     margin-left: 5px;
-    margin-left: -35px; 
+    margin-left: -35px;
     margin-top: -19px;
 }
 
@@ -138,22 +138,26 @@
     font-size: 12px;
 }
 
-.right-side-header {
-    color: gray;
-    font-size: 12px;
-    margin-top: 20px;
-    margin-left: 15px;
+.yes-friends {
+    display: none;
+    z-index: -100;
 }
 
-.group-side-tag {
-    color: #5bc5a7;
-    height: 20px;
-    width: 20px;
-    margin-bottom: -4px;
-    margin-right: 11px;
-    width: 4.25em;
+.u-have-friends {
+    color: #5cc4a6;
+    margin-left: -41px;
 }
 
-.group-side-name {
+.friend-side-tag {
+    color: #5cc4a6;
+}
 
+.add-friends-list {
+    display: flex;
+    margin-top: -2px;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.add-friends-here {
 }

@@ -5,15 +5,18 @@ import { fetchGroups } from '../../actions/group_actions';
 import { fetchFriends } from '../../actions/friend_actions'; 
 import Dashboard from './dashboard';
 
-const msp = ({ entities }) => ({
-    groups: Object.values(entities.groups),
-    // friends: object.values(entities.friends),
-});
+const msp = ({ entities, session }) => {
+    return {
+        groups: Object.values(entities.groups),
+        friends: Object.values(entities.users),
+        cUId: session.id,
+    };
+};
 
 const mdp = dispatch => ({
         openModal: () => dispatch(openModal('friend')),
         fetchGroups: () => dispatch(fetchGroups()),
-//         fetchFriends: () => dispatch(fetchFriends()),
+        fetchFriends: (currentUserId) => dispatch(fetchFriends(currentUserId)),
 });
 
 export default connect(msp, mdp)(Dashboard);
