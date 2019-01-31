@@ -45,3 +45,10 @@
     border-top-color: #f1612c;
     background: #f0531a;
 }
+
+.errors {
+    margin-top: 235px;
+    margin-left: 125px;
+    width: 514px;
+    font-size: 17px;
+}

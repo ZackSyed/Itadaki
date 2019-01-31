@@ -1,5 +1,5 @@
 class User < ApplicationRecord 
-    validates :username, :password_digest, :session_token, presence: true
+    validates :username, :email, :password_digest, :session_token, presence: true
     validates :password, length: { minimum: 6, allow_nil: true }
 
     after_initialize :ensure_session_token
@@ -9,8 +9,10 @@ class User < ApplicationRecord
     #     through: :tabs, 
     #     source: :groups
 
-    has_many :friends
-
+    has_many :friends 
+        # primary_key: :id,
+        # foreign_key: :user_id,
+        # class_name: :Friend
     
     # def self.valid_email?(self.email)
     #     if (self.email.nil?) 

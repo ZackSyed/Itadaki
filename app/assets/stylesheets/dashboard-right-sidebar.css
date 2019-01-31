@@ -3,5 +3,24 @@
     width: 100%;
 }
 
+.right-side-header {
+    color: gray;
+    font-size: 12px;
+    margin-top: 20px;
+    margin-left: 15px;
+}
+
+.group-side-tag {
+    color: #5bc5a7;
+    height: 20px;
+    width: 20px;
+    margin-bottom: -4px;
+    margin-right: 11px;
+    width: 4.25em;
+}
+
+.group-side-name {
+
+}
 
 

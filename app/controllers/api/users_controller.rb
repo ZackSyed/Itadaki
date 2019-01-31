@@ -6,7 +6,7 @@ class Api::UsersController < ApplicationController
     end 
 
     def show 
-        @user = User.find(id: params[:id])
+        @user = User.find(params[:id])
         render :show 
     end 
     
@@ -17,6 +17,20 @@ class Api::UsersController < ApplicationController
             render :show
         else 
             render json: @user.errors.full_messages, status: 404            
+        end 
+    end 
+
+    def search
+        if params[:username] 
+            @user = User.find_by(username: params[:username])
+        elsif params[:email]
+            @user = User.find_by(email: params[:email])
+        end
+
+        if @user 
+            render :search
+        else 
+            render json: ["Not a user"]
         end 
     end 
 

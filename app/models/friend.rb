@@ -4,8 +4,12 @@ class Friend < ApplicationRecord
 
 
     belongs_to :user 
-    belongs_to :friend, 
+    belongs_to :user_friend, 
         primary_key: :id, 
         foreign_key: :friend_id, 
-        class_name: :user
+        class_name: :User
+
+    def confirmation
+
+    end
 end 

@@ -12,20 +12,24 @@ function Modal({modal, closeModal}) {
   let component;
   switch (modal) {
        case 'friend':
-          component = <AddFriendContainer />
+       
+          component = <AddFriendContainer />;
           break;
        case 'username':
-          component = <SearchByUsername />
+          component = <SearchByUsername />;
           break;
        case 'email': 
-          component = <SearchByEmail />
+       
+          component = <SearchByEmail />;
           break;
     // case 'tab':
     //   component = <TabFormContainer />;
     //   break;
-    default:
-      return null;
+        default:
+          return null;
   }
+
+
   return (
     <div className="modal-background" onClick={closeModal}>
       <div className="modal-child" onClick={e => e.stopPropagation()}>

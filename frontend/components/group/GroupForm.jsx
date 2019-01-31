@@ -13,9 +13,10 @@ class GroupForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault(); 
         this.props.processForm(this.state); 
-        this.setState = {
+        this.setState = ({
             group_name: "",
-        };
+        });
+        this.props.history.push('/dashboard');
     }
 
     

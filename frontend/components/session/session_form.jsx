@@ -15,11 +15,11 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault(); 
         this.props.processForm(this.state); 
-        this.setState = {
+        this.setState({
             username: "",
             email: "",
             password: ""
-        };
+        });
     }
 
     
@@ -41,6 +41,7 @@ class SessionForm extends React.Component {
         ))}
         </ul>
         );
+        this.render();
     }
 
 
@@ -50,35 +51,35 @@ class SessionForm extends React.Component {
             className: { email, tag, form, submit, t } } = this.props; 
         return (
             <div className={formType}>
-             <Link to="/"><img className="session-img" src={window.flavicon}/></Link>
+                <Link to="/"><img className="session-img" src={window.flavicon}/></Link>
 
-             <div className="errors">
-                 {this.renderErrors()}
-             </div>
-            <form onSubmit={this.handleSubmit} className={form}>
-                <h2 className={t}>{top}</h2>
+                <form onSubmit={this.handleSubmit} className={form}>
+                    <h2 className={t}>{top}</h2>
 
-                <label className="tag">{first}
-                <br/>
-                <input className="user-field" onChange={this.fillForm('username')} type="text" value={this.state.username}/>
-                </label>
-                <br/>
+                    <label className="tag">{first}
+                    <br/>
+                    <input className="user-field" onChange={this.fillForm('username')} type="text" value={this.state.username}/>
+                    </label>
+                    <br/>
 
-                <label className={tag}>Here's my <strong>email address</strong> (optional):
-                <br/>
-                <input  className={email} onChange={this.fillForm('email')} type="email" value={this.state.email}/>
-                </label>
-                <br/>
+                    <label className={tag}>Here's my <strong>email address</strong>:
+                    <br/>
+                    <input  className={email} onChange={this.fillForm('email')} type="email" value={this.state.email}/>
+                    </label>
+                    <br/>
 
-                <label className="tag">Password:
-                <br/>
-                <input  className="password-field" onChange={this.fillForm('password')} type="password" value={this.state.password}/>
-                </label>
-                <br/>
-                
-                <input className={submit} type="submit" value={button}/>
-                <h2 className="either-or">{navLink}</h2>
-            </form>
+                    <label className="tag">Password:
+                    <br/>
+                    <input  className="password-field" onChange={this.fillForm('password')} type="password" value={this.state.password}/>
+                    </label>
+                    <br/>
+                    
+                    <input className={submit} type="submit" value={button}/>
+                    <h2 className="either-or">{navLink}</h2>
+                </form>
+                    <div className="errors">
+                        {this.renderErrors()}
+                    </div>
             </div>
         );
     }

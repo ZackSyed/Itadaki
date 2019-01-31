@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_30_155231) do
+ActiveRecord::Schema.define(version: 2019_01_31_155500) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 2019_01_30_155231) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["friend_id", "user_id"], name: "index_friends_on_friend_id_and_user_id", unique: true
-    t.index ["friend_id"], name: "index_friends_on_friend_id", unique: true
-    t.index ["user_id"], name: "index_friends_on_user_id", unique: true
+    t.index ["friend_id"], name: "index_friends_on_friend_id"
+    t.index ["user_id"], name: "index_friends_on_user_id"
   end
 
   create_table "groups", force: :cascade do |t|
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2019_01_30_155231) do
 
   create_table "users", force: :cascade do |t|
     t.string "username", null: false
-    t.string "email"
+    t.string "email", null: false
     t.string "password_digest", null: false
     t.string "session_token", null: false
     t.datetime "created_at", null: false

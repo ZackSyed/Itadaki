@@ -2,11 +2,22 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { createFriend } from '../../actions/friend_actions';
 
+
+const msp = state => ({
+    top: 'username', 
+});
+
+const mdp = dispatch => ({
+    createFriend: (username) => dispatch(createFriend(username)),
+});
+
+
+
 class SearchByUsername extends React.Component {
 
     constructor(props){
         super(props);
-
+        
         this.state = {
             username: "",
             body: ""
@@ -17,11 +28,11 @@ class SearchByUsername extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.props.createFriend(this.state);
-        this.setState = {
+        this.props.createFriend(this.state.username);
+        this.setState = ({
             username: "",
             body: ""
-        };
+        });
     }
 
     fillForm(field){
@@ -46,15 +57,5 @@ class SearchByUsername extends React.Component {
         )
     }
 }
-
-
-const msp = state => ({
-    top: 'username', 
-});
-
-const mdp = dispatch => ({
-    createFriend: () => dispatch(createFriend()),
-    // findUser: (username) => dispatch(findUser(username)),
-});
 
 export default connect(msp, mdp)(SearchByUsername); 

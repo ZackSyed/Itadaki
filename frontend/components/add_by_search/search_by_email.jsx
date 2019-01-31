@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { createFriend } from '../../actions/friend_actions';
+import { createEFriend } from '../../actions/friend_actions';
 
 class SearchByEmail extends React.Component {
 
@@ -17,13 +17,12 @@ class SearchByEmail extends React.Component {
     }
 
     handleSubmit(e) {
-        let { user_id } = this.props; 
         e.preventDefault();
-        this.props.createFriend(this.state.username, user_id);
-        this.setState = {
+        this.props.createEFriend(this.state.email);
+        this.setState = ({
             email: "",
             body: ""
-        };
+        });
     }
 
     fillForm(field){
@@ -54,8 +53,7 @@ const msp = state => ({
 });
 
 const mdp = dispatch => ({
-    createFriend: () => dispatch(createFriend()),
-    findUserByEmail: (email) => dispatch(findUserByEmail(email)),
+    createEFriend: (email) => dispatch(createEFriend(email)),
 });
 
 export default connect(msp, mdp)(SearchByEmail); 
