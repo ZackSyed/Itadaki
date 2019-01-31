@@ -8,7 +8,8 @@ import Dashboard from './dashboard';
 const msp = ({ entities, session }) => {
     return {
         groups: Object.values(entities.groups),
-        friends: Object.values(entities.users),
+        users: Object.values(entities.users),
+        friends: entities.users[session.id].friends,
         cUId: session.id,
     };
 };
