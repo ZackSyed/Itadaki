@@ -4,7 +4,7 @@ import { push } from 'react-router-redux';
 import { connect } from 'react-redux'; 
 import { logout } from '../../actions/session_actions';
 import { withRouter } from "react-router";
-import { ButtonDropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+
 
 class Navbar extends React.Component {
     constructor(props) {
@@ -54,7 +54,7 @@ class Navbar extends React.Component {
         return (
             <header className={className}>
                 <div className="flex-container">
-                    <h1>
+                <Link to="/dashboard" className="link-to-dash"><h1>
                         <ul className="letters">
                             <li>I</li>
                             <li>T</li>
@@ -64,7 +64,7 @@ class Navbar extends React.Component {
                             <li>K</li>
                             <li>I</li>
                         </ul>  
-                    </h1>
+                    </h1></Link>
                     <ul className="navbuttons">
                         {user.id ? userHere : noUser }
                     </ul>
