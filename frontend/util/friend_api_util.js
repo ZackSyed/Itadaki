@@ -5,10 +5,26 @@ export const fetchFriends = () => {
     });
 };
 
-export const createFriend = (friend) => {
+export const createFriend = (username) => {
     return $.ajax({
         method: 'post',
         url: 'api/friends',
-        data: { friend }
+        data: { username }
     });
 };
+
+export const createEFriend = (email) => {
+    return $.ajax({
+        method: 'post',
+        url: 'api/friends',
+        data: { email }
+    });
+};
+
+// export const searchFriend = (username) => {
+//     return $.ajax({
+//         method: 'get',
+//         url: 'api/users/search',
+//         data: { username }
+//     });
+// };

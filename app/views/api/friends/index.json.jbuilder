@@ -1,3 +1,3 @@
 @friends.each do 
-    json.set! :friends, :id 
+    json.set! :id 
 end 

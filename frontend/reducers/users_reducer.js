@@ -4,6 +4,7 @@ import { RECEIVE_FRIENDS, RECEIVE_FRIEND } from '../actions/friend_actions';
 
 export default (state = {}, action) => {
     Object.freeze(state); 
+    let newState = Object.assign({}, state); 
     switch (action.type) {
         case RECEIVE_USERS:
         return action.users; 
@@ -16,9 +17,10 @@ export default (state = {}, action) => {
             action.friends.forEach( friend => {
                 friend_ids.push(friend.id);
             });
-            return Object.assign({}, state, { [state.session.id]: { friends: friend_ids }});
+            // return Object.assign({}, state, { [state.session.id]: { friends: friend_ids }});
+                return Object.assign({}, state, { friends: friend_ids });
         case RECEIVE_FRIEND:
-            return action.friend;
+            return Object.assign({}, state, { [action.friend.user_id]: { friends: [action.friend.id] }});
         default:
             return state;
     }

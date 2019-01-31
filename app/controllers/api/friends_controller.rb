@@ -1,9 +1,8 @@
-class Api::UsersController < ApplicationController 
+class Api::FriendsController < ApplicationController 
      
     def index
-        all_friends = Friend.all
-        @friends = all_friends.select { |friend| friend.user_id == current_user.id }
-        render :index @friends
+        @friends = Friend.where({ user_id: current_user.id }).or({ friend_id: current_user.id })
+        render :index 
     end  
 
     def show
@@ -12,19 +11,21 @@ class Api::UsersController < ApplicationController
     end 
 
     def create 
-        @friend = Friend.new(friend_params)
-        @friend.user_id = current_user.id 
-        if @friend 
-            render :index
+        @friend = Friend.new
+        if params[:username] 
+            user = User.find_by(username: params[:username])
+            @friend.friend_id = user.id 
+            @friend.user_id = current_user.id 
+        elsif params[:email]
+            user = User.find_by(email: params[:email])
+            @friend.friend_id = user.id 
+            @friend.user_id = current_user.id 
+        end
+        if @friend.save
+            render :show
         else 
-            render json: @friend.errors.full_messages 
+            render json: ["User does not exist/already a friend"]
         end 
-    end 
-
-    def searchUsername
-    end 
-
-    def searchEmail
     end 
 
     def friend_params 
