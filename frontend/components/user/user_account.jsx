@@ -24,11 +24,11 @@ class UserAccount extends React.Component {
                 </div>
                 <ul className="account-list">
                     <li className="list-header">your name</li>
-                    <li><strong>{user.username}</strong><FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
+                    <li><strong>{user.username}</strong><FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit?</li>
                     <li className="list-header">your email address</li>
-                    <li><strong>{user.email ? user.email : "None"}</strong> <FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
+                    <li><strong>{user.email ? user.email : "None"}</strong> <FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit?</li>
                     <li className="list-header">Your password</li>
-                    <li><strong className="password">........</strong><FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit</li>
+                    <li><strong className="password">........</strong><FontAwesomeIcon icon={faPen} className="ac-pen" /> Edit?</li>
                 </ul>
 
             </div>

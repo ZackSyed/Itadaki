@@ -66,7 +66,7 @@
     border: 1px solid #e65928;
     width: 221px;
     box-shadow: #e65928 0px 1px 2px 0px;
-    font-size: 18px;
+    font-size: 17px;
     height: 26px;
 }
 
@@ -81,7 +81,7 @@
 }
 
 .bill {
-    font-size: 16px;
+    font-size: 15px;
     border: 1px solid #e65828;
     background: #ff652f;
     color: white;
@@ -105,5 +105,5 @@
     width: 66px;
     height: 21px;
     margin-top: 11px;
-    margin-left: 22px;
+    margin-left: 16px;
 }

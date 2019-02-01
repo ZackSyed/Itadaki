@@ -15,14 +15,6 @@ class Dashboard extends React.Component {
         this.props.fetchFriends(this.props.cUId);
     }
 
-    // componentDidUpdate(prevProps){
-    //     debugger
-    // }
-
-    // handleSubmit(e) {
-    //     
-    // }
-
 
     render() {
 

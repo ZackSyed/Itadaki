@@ -14,7 +14,6 @@ export default (oldState = [], action) => {
         case RECEIVE_USER_ERRORS:
             return action.errors;
         case FRIEND_ERRORS:
-            debugger
             return action.errors;
         case RECEIVE_CURRENT_USER:
             return []; 

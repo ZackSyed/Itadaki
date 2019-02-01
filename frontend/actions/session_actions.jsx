@@ -17,7 +17,7 @@ const logoutCurrentUser = () => {
     };
 };
 
-const haveErrors = (errors) => {
+export const haveErrors = (errors) => {
     return {
         type: RECEIVE_SESSION_ERRORS,
         errors, 

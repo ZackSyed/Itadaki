@@ -3,13 +3,13 @@
     align-content: center;
     max-width: 700px;
     max-height: 550px;
-    margin-left: 220px;
+    margin-left: 431px;
 }
 
 .top {
     font-size: 15px;
     color: gray;
-    margin-right: auto;
+    margin-right: 175px;
 }
 
 .tag {
@@ -18,16 +18,14 @@
 
 
 .session-img {
-    /* border: 5px solid blue;  */
     height: 200px;
     width: 200px;
-    margin-right: -126px;
+    margin-right: -103px;
     margin-left: 150px;
     margin-top: 41px;
 }
 
 .signmeup {
-    /* border: 5px solid yellow;  */
     display: flex;
     flex-direction: column;
     height: 477px;
@@ -44,7 +42,7 @@
     box-shadow: #e65928 0px 1px 2px 0px;
     color: #fff;
     vertical-align: middle;
-    margin-right: auto;
+    margin-right: 196px;
     height: 54px;
     width: 151px;
 }
@@ -55,7 +53,7 @@
 }
 
 .either-or {
-    width: 343px;
+    width: 367px;
     margin-bottom: 52px;
 }
 

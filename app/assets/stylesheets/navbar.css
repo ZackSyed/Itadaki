@@ -11,19 +11,20 @@
     display: flex;
     list-style: none;
     margin-top: 11px;
-    margin-right: 108px;
+    margin-right: 268px;
 }
 
 .letters {
     display: flex;
-    font-size: 20px;
+    font-size: 19px;
     padding: 10px;
     font-family: inherit;
     width: 220px;
     flex-direction: row;
     justify-content: space-around;
     margin-top: -20px;
-    margin-left: 159px;
+    margin-left: 404px;
+    font-weight: none;
 }
 
 .navbar {
@@ -53,7 +54,7 @@
     border-bottom: 1px solid #42937c; 
     background:  #5cc4a6;
     color: #fff;
-    box-shadow: #39a385 0px 1px 2px 0px;
+    box-shadow: #39a385 0px 1px 3px 0px;
     text-shadow: rgba(0,0,0,.4) 0 -1px 0;
     margin-right: 20px; 
  }
@@ -69,7 +70,7 @@
     border-top: 1px solid #e65928; 
     border-bottom: 1px solid #c14a20;
     color: #fff;
-    box-shadow: #e65928 0px 1px 2px 0px;
+    box-shadow: #e65928 0px 1px 3px 0px;
     text-shadow: rgba(0,0,0,.4) 0 -1px 0;
  }
 

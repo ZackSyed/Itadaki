@@ -2,8 +2,8 @@
     display: flex;
     align-content: center;
     max-width: 700px;
-    max-height: 550px;
-    margin-left: 220px;
+    max-height: 560px;
+    margin-left: 438px;
 }
 
 .logmein {
@@ -47,7 +47,7 @@
 }
 
 .errors {
-    margin-top: 235px;
+    margin-top: 232px;
     margin-left: 125px;
     width: 514px;
     font-size: 17px;
