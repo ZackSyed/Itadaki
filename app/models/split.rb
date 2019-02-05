@@ -1,0 +1,3 @@
+class Split < ApplicationRecord 
+    
+end 
