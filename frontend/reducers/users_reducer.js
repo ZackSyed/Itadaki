@@ -5,7 +5,6 @@ import { merge } from 'lodash';
 
 export default (state = {}, action) => {
     Object.freeze(state); 
-    let newState = Object.assign({}, state); 
     switch (action.type) {
         case RECEIVE_USERS:
         return action.users; 
