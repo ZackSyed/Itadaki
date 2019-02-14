@@ -16,6 +16,15 @@ class  Api::TabsController < ApplicationController
         end 
     end 
 
+    def show 
+        @tab = Tab.find(params[:id])
+        if @tab 
+            render :show
+        else 
+            render json: @tab.errors.full_messages
+        end 
+    end 
+
 
     def tab_params 
         params.require(:tab).permit(:name, :total)
