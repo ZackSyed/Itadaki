@@ -22,9 +22,9 @@ function Modal({modal, closeModal}) {
        
           component = <SearchByEmail />;
           break;
-    // case 'tab':
-    //   component = <TabFormContainer />;
-    //   break;
+       case 'tab':
+          component = <TabFormContainer />;
+          break;
         default:
           return null;
   }
