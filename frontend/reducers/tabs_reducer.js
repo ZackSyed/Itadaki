@@ -8,6 +8,6 @@ export default (state = {}, action) => {
         case RECEIVE_TAB:
             return action.tab;
         default:
-            break;
+            return state;
     }
 }
