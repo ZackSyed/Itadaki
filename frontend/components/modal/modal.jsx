@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import AddFriendContainer from '../friend/add_Friend_Container';
 import SearchByUsername from '../add_by_search/search_by_username';
 import SearchByEmail from '../add_by_search/search_by_email';
+import TabFormContainer from '../tab/tab_form_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {

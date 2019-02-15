@@ -16,6 +16,7 @@ const msp = ({ entities, session }) => {
 
 const mdp = dispatch => ({
         openModal: () => dispatch(openModal('friend')),
+        openTabModal: () => dispatch(openModal('tab')),
         fetchGroups: () => dispatch(fetchGroups()),
         fetchFriends: (currentUserId) => dispatch(fetchFriends(currentUserId)),
 });
