@@ -72,7 +72,7 @@ class Dashboard extends React.Component {
                 <div className="activity-top"> 
                     <div className="activity-main">  
                         <h1 className="activity-header">Dashboard</h1>
-                        <Link className="btn bill" to='' onClick={this.props.openTabModal}>Add a bill</Link>
+                        <Link className="btn bill" to='' onClick={this.props.openTabModal}>Add a tab</Link>
                         <Link className="btn sttl" to="/">settle up</Link>
                     </div>
                         <div className="activity-center">

@@ -20,7 +20,7 @@ class TabModal extends React.Component {
         this.setState({
             group_name: "",
             name: "",
-            total: ""
+            total: 0.00
         });
     }
 
@@ -39,27 +39,33 @@ class TabModal extends React.Component {
                 <button onClick={this.props.closeModal} className="tab-closer">X</button>
                 </div>
                     <form onSubmit={this.handleSubmit} className='tab-create-form'> 
+                    
                             <div className='tab-create-img-holder'>
                                 <img className="tab-create-img" src={window.tab}/>
                             </div>
                             
                             <div className='tab-create-field-holder'>
+
                                 <br/>   
-                                <input  className='tab-create-group-name' onChange={this.fillForm('group_name')} type="text" value={this.state.groupName} placeholder='Enter group name' />
+                                    <div className='tab-create-group-holder'>
+                                        <span className='tab-create-group-tag'>With you and:</span>
+                                        <input  className='tab-create-group-name' onChange={this.fillForm('group_name')} type="text" value={this.state.group_name} placeholder='Enter group name' />
+                                    </div>
                                 <br/>
                                 
                 
                                 <br/>
-                                <input  className='tab-create-name' onChange={this.fillForm('name')} type="text" value={this.state.tabName} placeholder='Enter a description'/>
+                                    <input  className='tab-create-name' onChange={this.fillForm('name')} type="text" value={this.state.tabName} placeholder='Enter a description'/>
                                 <br/>
 
                                 <br/>
-                                <input  className="tab-create-total" onChange={this.fillForm('total')} type="integer" value={this.state.total} />
+                                    <span className='tab-create-total-tag'>$</span>
+                                    <input  className="tab-create-total" onChange={this.fillForm('total')} type="integer" value={this.state.total} />
                                 <br/>
                             </div>
 
                             <div className='tab-create-btn-holder'>
-                                <button onClick={this.props.closeModal} className="btn tab-create-close">Close</button>
+                                <button onClick={this.props.closeModal} className="btn tab-create-close">Cancel</button>
                                 <input type="submit" className='btn tab-create-save' value='save' />
                             </div>
                     </form>

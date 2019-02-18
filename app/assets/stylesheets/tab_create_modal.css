@@ -40,42 +40,102 @@
     flex-direction: column;
 }
 
-.tab-create-img-holder {
-
-}
-
 .tab-create-field-holder {
-
-}
-
-.tab-create-btn-holder {
-    
+    margin-top: -132px;
+    margin-bottom: 25px;
 }
 
 .tab-create-group-name {
     border: none;
-    width: 228px;
+    padding: 5px;
+    width: 221px;
     height: 25px;
     font-size: 15px;
+    color: gray;
+}
+
+.tab-create-group-tag {
+    margin-top: 7px;
+    margin-left: 16px;
+}
+
+.tab-create-group-holder {
+    margin-bottom: -29px;
+    width: 352px;
+    border-bottom: 1px solid black;
+    margin-left: -100px;
+    display: flex;
+    justify-content: center;
 }
 
 .tab-create-img {
-    margin-left: -79px;
+    margin-left: -78px;
+    margin-top: 37px;
+    width: 50px;
+    height: 67px;
 }
+
 
 .tab-create-name {
     border: none;
+    border-bottom: 1px dashed;
+    width: 170px;
+    height: 25px;
+    font-size: 15px;
+    padding: 5px; 
+    color: gray;
+    margin-bottom: -10px;
 }
 
 .tab-create-total {
     border: none;
+    border-bottom: 1px dashed;
+    padding: 5px;   
+    width: 161px;
+    height: 25px;
+    font-size: 15px;
+    color: gray;
+    margin-bottom: -10px;
+}
 
+.tab-create-total-tag {
+    font-size: 17px;
+}
+
+.tab-create-btn-holder {
+    margin-left: 85px;
+    margin-top: 22px;
+    margin-bottom: 10px;
 }
 
 .tab-create-save {
-
+    font-size: 16px;
+    border: 1px solid #50b195;
+    background:  #5cc4a6;
+    color: #fff;
+    box-shadow: #39a385 0px 1px 2px 0px;
+    text-shadow: rgba(0,0,0,.4) 0 -1px 0;
+    width: 66px;
+    height: 35px;
+    margin-left: 10px;
 }
 
 .tab-create-close {
+    font-size: 16px;
+    border: 1px solid  #dedede;
+    background: #f6f6f6;
+    color: #333;
+    box-shadow: #dedede 0px 1px 2px 0px;
+    text-shadow: rgba(0,0,0,.4) 0 -1px 0;
+    width: 80px;
+    height: 35px;
+}
 
+.tab-create-save:hover {
+    border-top-color: #51a890;
+    background: #51a890;
+}
+
+.tab-create-close:hover {
+    background: #e6e6e6;
 }
