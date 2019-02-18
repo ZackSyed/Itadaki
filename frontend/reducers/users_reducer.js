@@ -9,9 +9,9 @@ export default (state = {}, action) => {
         case RECEIVE_USERS:
         return action.users; 
         case RECEIVE_USER: 
-        return Object.assign({}, state, { [action.user.id]: action.user });
+        return merge({}, state, { [action.user.id]: action.user });
         case RECEIVE_CURRENT_USER:
-        return Object.assign({}, state,  { [action.user.id]: action.user });
+        return merge({}, state,  { [action.user.id]: action.user });
         case RECEIVE_FRIENDS:
             const friend_ids = Object.keys(action.friends);
             return merge({}, state, { [action.currentUserId]: { friends: friend_ids }}, action.friends);

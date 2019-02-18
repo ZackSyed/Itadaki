@@ -31,7 +31,7 @@ class Dashboard extends React.Component {
 
             
         const friendList = [];
-        const myFriends = friends ? friends : null; 
+        const myFriends = friends ? friends : []; 
         for (let i = 0; i < users.length; i++) {
             if (users[i].id !== cUId && myFriends.includes(`${users[i].id}`)) {
                 friendList.push(<li key={`friends-${[i]}`} className="u-have-friends"><FontAwesomeIcon icon={faUser} className="friend-side-tag" /> {users[i].username}</li>)

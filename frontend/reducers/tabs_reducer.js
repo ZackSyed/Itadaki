@@ -6,7 +6,7 @@ export default (state = {}, action) => {
     
     switch (action.type) {
         case RECEIVE_TAB:
-            return action.tab;
+        return merge({}, state, { [action.tab.id]: action.tab });
         default:
             return state;
     }
