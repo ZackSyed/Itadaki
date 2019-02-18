@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { openModal } from '../../actions/modal_actions';
 import { fetchGroups } from '../../actions/group_actions';
 import { fetchFriends } from '../../actions/friend_actions'; 
-import Dashboard from './dashboard';
+import Dashboard from './dashboard_skeleton';
 
 const msp = ({ entities, session }) => {
     return {

@@ -1,6 +1,5 @@
-import React, { PropTypes } from 'react'; 
+import React from 'react'; 
 import { Link } from 'react-router-dom';
-import { push } from 'react-router-redux';
 import { connect } from 'react-redux'; 
 import { logout } from '../../actions/session_actions';
 import { withRouter } from "react-router";
