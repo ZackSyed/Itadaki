@@ -1,0 +1,81 @@
+.create-tab {
+    display: flex;
+    flex-direction: column;
+    width: 350px; 
+    height: 400px; 
+}
+
+.tab-create-header {
+    border-radius: 4px;
+    color: white;
+    background: #5cc5a7;
+    border-bottom: 1px solid #36977b;
+    height: 41px;
+}
+
+.tab-create-header-tag {
+    color: white;
+    padding: 10px;
+    text-shadow: 0 -1px 0 #318a71;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tab-closer {
+    color: white;
+    border: none;
+    margin-left: 218px;
+    margin-top: 6px;
+    font-size: 22px;
+}
+
+.tab-create-form {
+    padding: 4px;
+    border-bottom: 1px solid #eee;
+    padding-left: 98px;
+    max-height: 250px;
+    overflow-y: auto;
+    background: #ffffff;    
+    display: flex;
+    flex-direction: column;
+}
+
+.tab-create-img-holder {
+
+}
+
+.tab-create-field-holder {
+
+}
+
+.tab-create-btn-holder {
+    
+}
+
+.tab-create-group-name {
+    border: none;
+    width: 228px;
+    height: 25px;
+    font-size: 15px;
+}
+
+.tab-create-img {
+    margin-left: -79px;
+}
+
+.tab-create-name {
+    border: none;
+}
+
+.tab-create-total {
+    border: none;
+
+}
+
+.tab-create-save {
+
+}
+
+.tab-create-close {
+
+}
