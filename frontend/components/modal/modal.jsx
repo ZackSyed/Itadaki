@@ -24,6 +24,7 @@ function Modal({modal, closeModal}) {
           component = <SearchByEmail />;
           break;
        case 'tab':
+       debugger
           component = <TabFormContainer />;
           break;
         default:

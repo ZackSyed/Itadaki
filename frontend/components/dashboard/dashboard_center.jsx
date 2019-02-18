@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'; 
+import { openModal } from '../../actions/modal_actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserSecret, faPlus, faUser } from '@fortawesome/free-solid-svg-icons';
 
@@ -10,6 +11,7 @@ class DashCenter extends React.Component {
 
     constructor(props){
         super(props);
+        
     }
 
     render() {

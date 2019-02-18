@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { createFriend } from '../../actions/friend_actions';
+import { closeModal } from '../../actions/modal_actions';
 
 
 const msp = state => ({
@@ -9,6 +10,7 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     createFriend: (username) => dispatch(createFriend(username)),
+    closeModal: () => dispatch(closeModal()), 
 });
 
 
@@ -33,6 +35,7 @@ class SearchByUsername extends React.Component {
             username: "",
             body: ""
         });
+        this.props.closeModal();
     }
 
     fillForm(field){

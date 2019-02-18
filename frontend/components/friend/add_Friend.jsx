@@ -1,7 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faUserFriends } from '@fortawesome/free-solid-svg-icons';
-import { openModal } from '../../actions/modal_actions';
 import { Link } from 'react-router-dom';
 
 class AddFriend extends React.Component {
