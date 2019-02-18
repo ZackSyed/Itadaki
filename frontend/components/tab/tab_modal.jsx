@@ -5,20 +5,21 @@ class TabModal extends React.Component {
         super(props);
 
         this.state = {
-            groupName: '',
-            tabName: '', 
+            group_name: '',
+            name: '', 
             total: 0.00,
-
         }
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger
         this.props.createTab(this.state); 
         this.setState({
-            groupName: "",
-            tabName: "",
+            group_name: "",
+            name: "",
             total: ""
         });
     }
@@ -35,16 +36,19 @@ class TabModal extends React.Component {
             <div className="create-tab">
                 <span>Add a Bill <button onClick={this.props.closeModal} className="tab-closer">X</button></span>
                     <form onSubmit={this.handleSubmit} className='tab-create-form'>    
-                    <input  className='tab-create-group-name' onChange={this.fillForm('groupName')} type="text" value={this.state.groupName} placeholder=' group name' />
+                    <input  className='tab-create-group-name' onChange={this.fillForm('group_name')} type="text" value={this.state.groupName} placeholder=' group name' />
                             <img className="tab-create-img" src={window.tab}/>
                
                             <br/>
-                            <input  className='tab-create-name' onChange={this.fillForm('tabName')} type="text" value={this.state.tabName} placeholder='Enter a description'/>
+                            <input  className='tab-create-name' onChange={this.fillForm('name')} type="text" value={this.state.tabName} placeholder='Enter a description'/>
                             <br/>
 
                             <br/>
                             <input  className="tab-create-total" onChange={this.fillForm('total')} type="integer" value={this.state.total} />
                             <br/>
+
+                            <button onClick={this.props.closeModal} className="btn tab-create-close">Close</button>
+                            <input type="submit" className='btn tab-create-total' value='save' />
                     </form>
             </div>
         )

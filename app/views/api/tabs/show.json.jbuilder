@@ -1,1 +1,1 @@
-json.extracmt! @tab :id, :total, :name, :settled
+json.extract! @tab, :id, :total, :name, :settled, :group_id 

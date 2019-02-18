@@ -10,6 +10,7 @@ class User < ApplicationRecord
     #     source: :groups
 
     has_many :friends 
+    has_many :tabs
         # primary_key: :id,
         # foreign_key: :user_id,
         # class_name: :Friend

@@ -13,7 +13,7 @@ const msp = ({ session, entities }) => {
 
 const mdp = (dispatch) => {
     return {
-        createTab: () => dispatch(createTab()),
+        createTab: (param) => dispatch(createTab(param)),
         closeModal: () => dispatch(closeModal()),
     }
 }

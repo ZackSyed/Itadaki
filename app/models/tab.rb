@@ -3,7 +3,7 @@ class Tab < ApplicationRecord
     validates :settled, inclusion: { in: [ true, false ] }
 
     belongs_to :group 
-    belongs_to :lender
-        foreign_key: :lender_id
+    belongs_to :lender,
+        foreign_key: :lender_id,
         class_name: :User
 end 
