@@ -3,16 +3,18 @@ import { Link, NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faFlag, faListUl, faPlus, faUser, faTag } from '@fortawesome/free-solid-svg-icons';
 import DashCenter from './dashboard_center';
+import DashRec from './dashboard_recents';
 
 class Dashboard extends React.Component {
     constructor(props){
         super(props);
 
-    }
+    }   
 
     componentDidMount(){
         this.props.fetchGroups();
         this.props.fetchFriends(this.props.cUId);
+
     }
 
 
@@ -37,6 +39,16 @@ class Dashboard extends React.Component {
                 friendList.push(<li key={`friends-${[i]}`} className="u-have-friends"><FontAwesomeIcon icon={faUser} className="friend-side-tag" /> {users[i].username}</li>)
             }
         }
+
+        let renderOnCenter = < />;
+        if (this.props.location.pathname === 'dashboard') {
+            renderOnCenter = <DashCenter />;
+        } else if (this.props.location.pathname === 'activity') {
+             renderOnCenter = <DashRec />;
+        } 
+        {/* // else if (this.props.location.pathname === 'all') {
+            
+        // } */}
 
         return (
             <div className="dash">
@@ -70,7 +82,7 @@ class Dashboard extends React.Component {
                 </div>
 
                 <div className="activity-top"> 
-                    <DashCenter /> 
+                    {renderOnCenter}
                 </div>
 
                 <div className="dashboard-right-sidebar">

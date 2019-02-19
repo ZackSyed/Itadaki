@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from "react-router";
 // import { openModal } from '../../actions/modal_actions';
 import { fetchGroups } from '../../actions/group_actions';
 import { fetchFriends } from '../../actions/friend_actions'; 
@@ -21,4 +22,4 @@ const mdp = dispatch => ({
         fetchFriends: (currentUserId) => dispatch(fetchFriends(currentUserId)),
 });
 
-export default connect(msp, mdp)(Dashboard);
+export default withRouter(connect(msp, mdp)(Dashboard));

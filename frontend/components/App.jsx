@@ -11,7 +11,6 @@ import DashboardContainer from '../components/dashboard/dashboard_container';
 import Modal from '../components/modal/modal';
 import UserAccountContainer from '../components/user/user_account_container'
 
-library.add(faUserSecret);
 
 const App = () => (
     <div>    
