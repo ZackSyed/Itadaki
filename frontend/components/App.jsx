@@ -10,9 +10,6 @@ import Footer from './footer/footer';
 import DashboardContainer from '../components/dashboard/dashboard_container';
 import Modal from '../components/modal/modal';
 import UserAccountContainer from '../components/user/user_account_container'
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUserSecret } from '@fortawesome/free-solid-svg-icons';
 
 library.add(faUserSecret);
 
@@ -26,6 +23,8 @@ const App = () => (
         <AuthRoute path="/login" component={LoginContainer} />
         <AuthRoute path="/signup" component={SignupContainer} />
         <ProtectedRoute path="/dashboard" component={DashboardContainer} />
+        <ProtectedRoute path="/activity" component={DashboardContainer} />
+        <ProtectedRoute path="/all" component={DashboardContainer} />
         <ProtectedRoute path="/account" component={UserAccountContainer} />
         <ProtectedRoute path="/groups/new" component={GroupFormContainer} />
         </div>

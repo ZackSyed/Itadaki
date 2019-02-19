@@ -8,6 +8,21 @@
     margin-right: 15px;
 }
 
+.to-account {
+    text-decoration: none;
+    color: gray;
+    width: 122px;
+    margin-left: 11px;
+    margin-bottom: 5px;
+    margin-top: -34px;
+}
+
+.to-account:hover {
+    background-color: lightgray;
+}
+
+
+
 .to-dash {
     border-radius: 0px !important;
     text-shadow: none !important;
