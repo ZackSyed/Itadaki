@@ -1,4 +1,4 @@
-import { RECEIVE_TAB } from '../actions/tab_action';
+import { RECEIVE_TAB, RECEIVE_ALL_TABS } from '../actions/tab_action';
 import { merge } from 'lodash';
 
 export default (state = {}, action) => {
@@ -7,6 +7,8 @@ export default (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_TAB:
         return merge({}, state, { [action.tab.id]: action.tab });
+        case RECEIVE_ALL_TABS:
+            return merge({}, state)
         default:
             return state;
     }

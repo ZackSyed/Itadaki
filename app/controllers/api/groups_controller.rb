@@ -3,7 +3,7 @@ class Api::GroupsController < ApplicationController
     def create 
         @group = Group.create(group_params)
         if @group
-            Interaction.create(user_id: current_user, group_id: @group.id)
+            Interaction.create(user_id: current_user.id, group_id: @group.id)
             render :show  
         else 
             render json: @group.errors.full_messages 
@@ -26,7 +26,7 @@ class Api::GroupsController < ApplicationController
     end   
 
     def index 
-        @groups = Group.all 
+        @groups = Group.joins(interactions: :user)
         render :index 
     end  
 
