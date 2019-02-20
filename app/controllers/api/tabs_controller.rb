@@ -12,8 +12,8 @@ class  Api::TabsController < ApplicationController
         end 
 
         if @tab.save 
-            render :show
             Split.create(tab_id: @tab.id, user_id: current_user.id)
+            render :show
         else 
             render json: @tab.errors.full_messages
         end 

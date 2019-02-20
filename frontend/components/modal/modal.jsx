@@ -13,18 +13,15 @@ function Modal({modal, closeModal}) {
   let component;
   switch (modal) {
        case 'friend':
-       
           component = <AddFriendContainer />;
           break;
        case 'username':
           component = <SearchByUsername />;
           break;
        case 'email': 
-       
           component = <SearchByEmail />;
           break;
        case 'tab':
-       debugger
           component = <TabFormContainer />;
           break;
         default:

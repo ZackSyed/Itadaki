@@ -11,6 +11,7 @@ const msp = ({ entities, session }) => {
         groups: Object.values(entities.groups),
         users: Object.values(entities.users),
         friends: entities.users[session.id].friends,
+        tabs: Object.values(entities.tabs),
         cUId: session.id,
     };
 };

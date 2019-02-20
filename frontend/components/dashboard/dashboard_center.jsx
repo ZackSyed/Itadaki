@@ -35,6 +35,8 @@ class DashCenter extends React.Component {
                                 <FontAwesomeIcon icon={faUser} className="friend-btn-user-icon" /> Add friends on Itadaki</Link>
                         </div>
                     </div>
+
+                    
                 </div>
             </div>
         )

@@ -3,6 +3,7 @@ class Api::GroupsController < ApplicationController
     def create 
         @group = Group.create(group_params)
         if @group
+            Interaction.create(user_id: current_user, group_id: @group.id)
             render :show  
         else 
             render json: @group.errors.full_messages 

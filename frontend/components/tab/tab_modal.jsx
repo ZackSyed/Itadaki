@@ -15,7 +15,6 @@ class TabModal extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
         this.props.createTab(this.state); 
         this.setState({
             group_name: "",
@@ -48,7 +47,7 @@ class TabModal extends React.Component {
 
                                 <br/>   
                                     <div className='tab-create-group-holder'>
-                                        <span className='tab-create-group-tag'>With you and:</span>
+                                        {/* <span className='tab-create-group-tag'>With you and:</span> */}
                                         <input  className='tab-create-group-name' onChange={this.fillForm('group_name')} type="text" value={this.state.group_name} placeholder='Enter group name' />
                                     </div>
                                 <br/>
