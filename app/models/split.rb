@@ -5,6 +5,8 @@ class Split < ApplicationRecord
     belongs_to :tab
     belongs_to :user 
 
+    after_initialize :set_amount_owed
+
     def set_amount_owed
         tab = Tab.find(id: self.tab_id)
         self.amount_owed = (tab.total / 2)

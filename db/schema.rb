@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_05_165804) do
+ActiveRecord::Schema.define(version: 2019_02_20_012027) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,6 +30,14 @@ ActiveRecord::Schema.define(version: 2019_02_05_165804) do
     t.string "group_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "interactions", force: :cascade do |t|
+    t.integer "group_id", null: false
+    t.integer "user_id", null: false
+    t.index ["group_id"], name: "index_interactions_on_group_id"
+    t.index ["user_id", "group_id"], name: "index_interactions_on_user_id_and_group_id"
+    t.index ["user_id"], name: "index_interactions_on_user_id"
   end
 
   create_table "splits", force: :cascade do |t|

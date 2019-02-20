@@ -12,6 +12,7 @@ class User < ApplicationRecord
     has_many :friends 
     has_many :tabs
     has_many :splits 
+    has_many :interactions
     
     # def self.valid_email?(self.email)
     #     if (self.email.nil?) 
