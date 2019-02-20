@@ -13,6 +13,7 @@ class  Api::TabsController < ApplicationController
 
         if @tab.save 
             render :show
+            Split.create(tab_id: @tab.id, user_id: current_user.id)
         else 
             render json: @tab.errors.full_messages
         end 
@@ -25,6 +26,10 @@ class  Api::TabsController < ApplicationController
         else 
             render json: @tab.errors.full_messages
         end 
+    end 
+
+    def index 
+        @tabs = Tab.where()
     end 
 
 

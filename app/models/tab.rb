@@ -6,4 +6,6 @@ class Tab < ApplicationRecord
     belongs_to :lender,
         foreign_key: :lender_id,
         class_name: :User
+
+    has_many :splits
 end 
