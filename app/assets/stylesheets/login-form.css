@@ -52,3 +52,12 @@
     width: 514px;
     font-size: 17px;
 }
+
+.either-or {
+    text-decoration: none;
+}
+
+.session-link {
+    text-decoration: none;
+    color: black;
+}

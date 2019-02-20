@@ -8,4 +8,10 @@ class Tab < ApplicationRecord
         class_name: :User
 
     has_many :splits
+
+    after_commit :create_split 
+
+    def create_split
+        Split.create(tab_id: self.id, user_id: self.lender_id)
+    end 
 end 

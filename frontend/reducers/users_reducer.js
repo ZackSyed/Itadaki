@@ -16,11 +16,11 @@ export default (state = {}, action) => {
         return merge({}, state,  { [action.user.id]: action.user });
         case RECEIVE_FRIENDS:
             const friend_ids = Object.keys(action.friends);
-            return merge({}, state, { [action.currentUserId]: { friends: friend_ids }}, action.friends);
+            return merge({}, state, { [state.entities.session.id]: { friends: friend_ids }}, action.friends);
         case RECEIVE_FRIEND:
             return merge({}, state, { [action.friend.user_id]: { friends: [action.friend.id] }});
         case RECEIVE_TAB:
-            return merge({}, state, { [action.currentUserId]: { tabs: [action.tab.id]} })
+            return merge({}, state, { [state.entities.session.id]: { tabs: [action.tab.id]} })
         default:
             return state;
     }

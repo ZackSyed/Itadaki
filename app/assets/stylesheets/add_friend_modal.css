@@ -16,7 +16,8 @@
   height: 110px;
   margin: auto;
   margin-left: 20px;
-
+  text-decoration: none;
+  color: gray;
 }
 
 .by-username {
@@ -26,6 +27,8 @@
   height: 110px;
   margin: auto;
   margin-right: 20px;
+  text-decoration: none;
+  color: gray;
 }
 
 .or {

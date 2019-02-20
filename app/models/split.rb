@@ -8,7 +8,7 @@ class Split < ApplicationRecord
     after_initialize :set_amount_owed
 
     def set_amount_owed
-        tab = Tab.find(id: self.tab_id)
+        tab = Tab.find(self.tab_id)
         self.amount_owed = (tab.total / 2)
         self.save!
     end 

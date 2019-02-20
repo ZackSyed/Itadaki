@@ -21,6 +21,7 @@ class TabModal extends React.Component {
             name: "",
             total: 0.00
         });
+        this.props.closeModal();
     }
 
     fillForm(field) {
