@@ -1,6 +1,6 @@
 import * as ApiGroupUtil from '../util/group_api_util'; 
 
-export const RECEIVE_GROUPS = 'RECEIVE_ALL_GROUPS';
+export const RECEIVE_GROUPS = 'RECEIVE_GROUPS';
 export const RECEIVE_GROUP = 'RECEIVE_GROUP';
 export const DELETE_GROUP = 'DELETE_GROUP'; 
 

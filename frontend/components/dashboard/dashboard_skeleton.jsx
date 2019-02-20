@@ -9,6 +9,8 @@ class Dashboard extends React.Component {
     constructor(props){
         super(props);
 
+
+        this.renderCenter = this.renderCenter.bind(this);
     }   
 
     componentDidMount(){
@@ -17,18 +19,32 @@ class Dashboard extends React.Component {
 
     }
 
+    renderCenter() {
+        switch (this.props.location.pathname) {
+            case '/dashboard':
+                return <DashCenter />
+            case '/activity':
+                return <DashRec />
+            default:
+                break;
+        }
+    }
 
-    render() {
+
+    render() {  
 
         let { groups, friends, cUId, users } = this.props;
         const groupli = []; 
-            for (let i = 0; i < groups.length - 1; i+2) {
-                groupli.push(<li key={`groups-${[i]}`} className="group-side-name" ><FontAwesomeIcon icon={faUsers} className="group-side-tag" />{groups[++i]}</li>)
-            }
-
         const groupTag = [];
-            for (let i = 0; i < groups.length - 1; i+2) {
-                groupTag.push(<li key={`groupss-${[i]}`} className="left-side-group-display"><FontAwesomeIcon icon={faTag} className="group-tag" size="xs" />{groups[++i]}</li>)
+            
+            if (groups.length === 3) {
+                groupli.push(<li key={`groups-${1}`} className="group-side-name" ><FontAwesomeIcon icon={faUsers} className="group-side-tag" />{groups[1]}</li>)
+                groupTag.push(<li key={`groupss-${1}`} className="left-side-group-display"><FontAwesomeIcon icon={faTag} className="group-tag" size="xs" />{groups[1]}</li>)
+            } else {
+                for (let i = 4; i < groups.length - 1; i+3) {
+                        groupli.push(<li key={`groups-${[i]}`} className="group-side-name" ><FontAwesomeIcon icon={faUsers} className="group-side-tag" />{groups[i]}</li>)
+                        groupTag.push(<li key={`groupss-${[i]}`} className="left-side-group-display"><FontAwesomeIcon icon={faTag} className="group-tag" size="xs" />{groups[i]}</li>)
+                }
             }
 
             
@@ -39,16 +55,6 @@ class Dashboard extends React.Component {
                 friendList.push(<li key={`friends-${[i]}`} className="u-have-friends"><FontAwesomeIcon icon={faUser} className="friend-side-tag" /> {users[i].username}</li>)
             }
         }
-
-        let renderOnCenter = < />;
-        if (this.props.location.pathname === 'dashboard') {
-            renderOnCenter = <DashCenter />;
-        } else if (this.props.location.pathname === 'activity') {
-             renderOnCenter = <DashRec />;
-        } 
-        {/* // else if (this.props.location.pathname === 'all') {
-            
-        // } */}
 
         return (
             <div className="dash">
@@ -82,7 +88,7 @@ class Dashboard extends React.Component {
                 </div>
 
                 <div className="activity-top"> 
-                    {renderOnCenter}
+                        {this.renderCenter()}
                 </div>
 
                 <div className="dashboard-right-sidebar">

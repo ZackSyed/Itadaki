@@ -1,0 +1,30 @@
+.recent-group-img {
+    height: 40px;
+    width: 40px;
+}
+
+.group-list {
+    height: 80px;
+    border-bottom: 1px solid black;
+    margin-left: -41px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.recent-list-block {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    justify-content: space-evenly;
+    margin-bottom: 31px;
+}
+
+.recent-list-tag-decrip {
+
+}
+
+.recent-list-tag-time {
+    color: gray;
+    font-size: 10p
+}
