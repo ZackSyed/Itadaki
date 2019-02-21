@@ -8,7 +8,8 @@ export default (state = {}, action) => {
         case RECEIVE_TAB:
         return merge({}, state, { [action.tab.id]: action.tab });
         case RECEIVE_ALL_TABS:
-            return merge({}, state, )
+            const tab_ids = Object.keys(action.tabs);
+            return merge({}, state, { [action.entities.session.id]: { tabs: tab_ids }}, action.tabs)
         default:
             return state;
     }
