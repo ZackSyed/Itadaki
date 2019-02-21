@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers, faFlag, faListUl, faPlus, faUser, faTag } from '@fortawesome/free-solid-svg-icons';
 import DashCenter from './dashboard_center';
 import DashRec from './dashboard_recents';
+import DashAct from './dashboard_active';
 
 class Dashboard extends React.Component {
     constructor(props) {
@@ -83,7 +84,7 @@ class Dashboard extends React.Component {
                 </div>
 
                 <div className="activity-top"> 
-                        {this.renderCenter()}
+                    {this.props.tabs ? <DashAct /> : this.renderCenter()}
                 </div>
 
                 <div className="dashboard-right-sidebar">
