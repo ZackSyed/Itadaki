@@ -38,3 +38,10 @@ export const fetchTab = (id) => dispatch => {
         error => dispatch(recieveTabError(error.responseJSON))
     );
 };
+
+export const fetchTabs = () => dispatch => {
+    return TabAPIUtil.fetchTabs().then(tabs => 
+        dispatch(recieveAllTabs(tabs)),
+        error => dispatch(recieveTabError(error.responseJSON))
+    );
+}
