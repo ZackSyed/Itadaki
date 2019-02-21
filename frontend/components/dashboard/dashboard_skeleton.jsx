@@ -6,9 +6,8 @@ import DashCenter from './dashboard_center';
 import DashRec from './dashboard_recents';
 
 class Dashboard extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-
 
         this.renderCenter = this.renderCenter.bind(this);
     }   
@@ -16,7 +15,7 @@ class Dashboard extends React.Component {
     componentDidMount(){
         this.props.fetchGroups();
         this.props.fetchFriends(this.props.cUId);
-
+        this.props.fetchTabs();
     }
 
     renderCenter() {

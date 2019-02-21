@@ -10,6 +10,12 @@ class DashRec extends React.Component {
         this.parseTime = this.parseTime.bind(this);
     }
 
+    componentDidMount() {
+        if (!this.props.tabs) {
+            this.props.fetchTabs();
+        }
+    }
+
     componentDidUpdate(prevProps) {
         if (prevProps !== this.props) {
             this.render();
@@ -39,6 +45,14 @@ class DashRec extends React.Component {
        }
     }
 
+    parseSettled(bool) {
+        if (bool) {
+            return 'This is all paid up';
+        } else {
+            return 'You still have to pay this tab'
+        }
+    }
+
     render() {
         let { groups, tabs } = this.props;
         const activity = [];
@@ -46,11 +60,23 @@ class DashRec extends React.Component {
         tabs = tabs ? tabs : [];
 
             for (let i = 0; i < groups.length; i++) {
-                activity.push(<li key={`group-rec-${groups[i].id}`} className='group-list'>
-                <img className="recent-group-img" src={window.flavicon}/>
+                activity.push(<li key={`group-rec-${groups[i].id}`} className='recent-list'>
+                <img className="recent-list-img" src={window.flavicon}/>
                     <div className='recent-list-block'>
                             <span className='recent-list-tag-descrip'>You created the group "{`${groups[i].group_name}`}"</span>
                             <span className='recent-list-tag-time'>{this.parseTime(groups[i].created_at)}</span>
+                    </div>
+                </li>)
+            }
+
+            for (let i = 0; i < tabs.length; i++) {
+                activity.push(<li key={`list-rec-${groups[i].id}`} className='recent-list'>
+                <img className="recent-list-img" src={window.flavicon}/>
+                    <div className='recent-list-block'>
+                            <span className='recent-list-tag-descrip'>You created the tab "{`${tabs[i].name}`}"</span>
+                            <span className='recent-list-owe'>The total is {`${tabs[i].total}`}</span>
+                            <span className='recent-list-settled'>{this.parseSettled(tabs[i].settled)}</span>
+                            <span className='recent-list-tag-time'>{this.parseTime(tabs[i].created_at)}</span>
                     </div>
                 </li>)
             }
@@ -82,6 +108,10 @@ const msp = ({ entities, session }) => ({
         users: Object.values(entities.users),
         friends: entities.users[session.id].friends,
         tabs: Object.values(entities.tabs),
+})
+
+const mdp = (dispatch) => ({
+    fetchTabs: () => dispatch(fetchTabs()),
 })
 
 export default connect(msp)(DashRec);

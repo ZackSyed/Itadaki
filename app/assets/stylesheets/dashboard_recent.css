@@ -1,9 +1,9 @@
-.recent-group-img {
+.recent-list-img {
     height: 40px;
     width: 40px;
 }
 
-.group-list {
+.recent-list {
     height: 80px;
     border-bottom: 1px solid black;
     margin-left: -41px;
