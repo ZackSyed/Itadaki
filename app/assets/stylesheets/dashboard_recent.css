@@ -3,7 +3,8 @@
     width: 40px;
 }
 
-.recent-list {
+.recent-li-list {
+    margin-bottom: 14px;
     height: 80px;
     border-bottom: 1px solid black;
     margin-left: -41px;
@@ -17,7 +18,7 @@
     flex-direction: column;
     margin-left: 10px;
     justify-content: space-evenly;
-    margin-bottom: 31px;
+    margin-bottom: 15px;
 }
 
 .recent-list-tag-decrip {

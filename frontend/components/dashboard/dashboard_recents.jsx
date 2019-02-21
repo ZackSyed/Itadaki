@@ -60,7 +60,7 @@ class DashRec extends React.Component {
         tabs = tabs ? tabs : [];
 
             for (let i = 0; i < groups.length; i++) {
-                activity.push(<li key={`group-rec-${groups[i].id}`} className='recent-list'>
+                activity.push(<li key={`group-rec-${groups[i].id}`} className='recent-li-list'>
                 <img className="recent-list-img" src={window.flavicon}/>
                     <div className='recent-list-block'>
                             <span className='recent-list-tag-descrip'>You created the group "{`${groups[i].group_name}`}"</span>
@@ -70,8 +70,8 @@ class DashRec extends React.Component {
             }
 
             for (let i = 0; i < tabs.length; i++) {
-                activity.push(<li key={`list-rec-${groups[i].id}`} className='recent-list'>
-                <img className="recent-list-img" src={window.flavicon}/>
+                activity.push(<li key={`list-rec-${tabs[i].id}`} className='recent-li-list'>
+                <img className="recent-list-img" src={window.tab}/>
                     <div className='recent-list-block'>
                             <span className='recent-list-tag-descrip'>You created the tab "{`${tabs[i].name}`}"</span>
                             <span className='recent-list-owe'>The total is {`${tabs[i].total}`}</span>
