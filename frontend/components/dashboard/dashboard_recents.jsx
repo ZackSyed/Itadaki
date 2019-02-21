@@ -45,6 +45,7 @@ class DashRec extends React.Component {
         groups = groups ? groups : [];
         
         if (groups.length === 3) {
+           debugger
            activity.push(<li key={`group-rec-${groups[0]}`} className='group-list'>
            <img className="recent-group-img" src={window.flavicon}/>
             <div className='recent-list-block'>

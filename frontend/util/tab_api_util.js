@@ -6,6 +6,13 @@ export const fetchTab = (id) => {
     });
 }
 
+export const fetchTabs = () => {
+    return $.ajax({
+        method: 'get', 
+        url: 'api/tabs',
+    })
+}
+
 export const createTab = (tab) => {
     return $.ajax({
         method: 'post',

@@ -1,6 +1,7 @@
 import * as TabAPIUtil from '../util/tab_api_util';
 
 export const RECEIVE_TAB = 'RECEIVE_TAB';
+export const RECEIVE_ALL_TABS  = 'RECEIVE_ALL_TABS';
 export const RECIEVE_TAB_ERROR = 'RECIEVE_TAB_ERROR';
 
 const receiveTab = (tab) => {
@@ -14,6 +15,13 @@ const recieveTabError = (error) => {
     return {
         type: RECIEVE_TAB_ERROR,
         error
+    }
+}
+
+const recieveAllTabs = (tabs) => {
+    return {
+        type: RECEIVE_ALL_TABS,
+        tabs
     }
 }
 

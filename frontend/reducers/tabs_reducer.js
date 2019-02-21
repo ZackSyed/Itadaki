@@ -8,7 +8,7 @@ export default (state = {}, action) => {
         case RECEIVE_TAB:
         return merge({}, state, { [action.tab.id]: action.tab });
         case RECEIVE_ALL_TABS:
-            return merge({}, state)
+            return merge({}, state, )
         default:
             return state;
     }
