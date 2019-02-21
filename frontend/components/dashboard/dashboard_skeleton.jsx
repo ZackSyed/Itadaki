@@ -84,7 +84,7 @@ class Dashboard extends React.Component {
                 </div>
 
                 <div className="activity-top"> 
-                    {this.props.tabs ? <DashAct /> : this.renderCenter()}
+                    {this.props.tabs ? this.renderCenter() : <DashAct />}
                 </div>
 
                 <div className="dashboard-right-sidebar">
