@@ -37,15 +37,11 @@ class Dashboard extends React.Component {
         const groupli = []; 
         const groupTag = [];
             
-            if (groups.length === 3) {
-                groupli.push(<li key={`groups-${1}`} className="group-side-name" ><FontAwesomeIcon icon={faUsers} className="group-side-tag" />{groups[1]}</li>)
-                groupTag.push(<li key={`groupss-${1}`} className="left-side-group-display"><FontAwesomeIcon icon={faTag} className="group-tag" size="xs" />{groups[1]}</li>)
-            } else {
-                for (let i = 4; i < groups.length - 1; i+3) {
-                        groupli.push(<li key={`groups-${[i]}`} className="group-side-name" ><FontAwesomeIcon icon={faUsers} className="group-side-tag" />{groups[i]}</li>)
-                        groupTag.push(<li key={`groupss-${[i]}`} className="left-side-group-display"><FontAwesomeIcon icon={faTag} className="group-tag" size="xs" />{groups[i]}</li>)
-                }
-            }
+        for (let i = 0; i < groups.length; i++) {
+                groupli.push(<li key={`groups-${[i]}`} className="group-side-name" ><FontAwesomeIcon icon={faUsers} className="group-side-tag" />{groups[i].group_name}</li>)
+                groupTag.push(<li key={`groupss-${[i]}`} className="left-side-group-display"><FontAwesomeIcon icon={faTag} className="group-tag" size="xs" />{groups[i].group_name}</li>)
+        }
+
 
             
         const friendList = [];

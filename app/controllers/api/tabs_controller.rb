@@ -28,7 +28,8 @@ class  Api::TabsController < ApplicationController
     end 
 
     def index 
-        @tabs = Tab.where()
+        @tabs = Tab.where(lender_id: current_user.id)
+        render :index
     end 
 
 

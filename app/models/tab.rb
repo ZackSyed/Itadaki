@@ -1,5 +1,5 @@
 class Tab < ApplicationRecord 
-    validates :total, presence: true 
+    validates :total, name, presence: true 
     validates :settled, inclusion: { in: [ true, false ] }
 
     belongs_to :group 

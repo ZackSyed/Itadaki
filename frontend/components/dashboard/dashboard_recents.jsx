@@ -40,30 +40,20 @@ class DashRec extends React.Component {
     }
 
     render() {
-        let { groups } = this.props;
+        let { groups, tabs } = this.props;
         const activity = [];
         groups = groups ? groups : [];
-        
-        if (groups.length === 3) {
-           debugger
-           activity.push(<li key={`group-rec-${groups[0]}`} className='group-list'>
-           <img className="recent-group-img" src={window.flavicon}/>
-            <div className='recent-list-block'>
-                    <span className='recent-list-tag-descrip'><strong>You</strong> created the group <strong>"{`${groups[1]}`}"</strong></span>
-                    <span className='recent-list-tag-time'>{this.parseTime(groups[2])}</span>
-            </div>
-           </li>)
-        } else {
-            for (let i = 3; i < groups.length; i+3) {
-                activity.push(<li key={`group-rec-${groups[i]}`} className='group-list'>
+        tabs = tabs ? tabs : [];
+
+            for (let i = 0; i < groups.length; i++) {
+                activity.push(<li key={`group-rec-${groups[i].id}`} className='group-list'>
                 <img className="recent-group-img" src={window.flavicon}/>
                     <div className='recent-list-block'>
-                            <span className='recent-list-tag-descrip'>You created the group "{`${groups[i+1]}`}"</span>
-                            <span className='recent-list-tag-time'>{groups[i+2]}</span>
+                            <span className='recent-list-tag-descrip'>You created the group "{`${groups[i].group_name}`}"</span>
+                            <span className='recent-list-tag-time'>{this.parseTime(groups[i].created_at)}</span>
                     </div>
                 </li>)
             }
-        }
 
 
         return (
