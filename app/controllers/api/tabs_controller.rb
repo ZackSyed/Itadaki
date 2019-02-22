@@ -10,8 +10,9 @@ class  Api::TabsController < ApplicationController
         else 
             @tab.group_id = group.id
         end 
-
+        debugger
         if @tab.save 
+            @tab.create_split
             render :show
         else 
             render json: @tab.errors.full_messages

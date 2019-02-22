@@ -13,11 +13,11 @@ export const fetchGroup = (id) => {
     });
 };
 
-export const createGroup = (group) => {
+export const createGroup = (group, usernames = []) => {
     return $.ajax({
         method: 'post',
         url: 'api/groups',
-        data: { group }
+        data: { group, usernames }
     });
 }; 
 

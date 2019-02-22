@@ -1,8 +1,9 @@
 class Api::GroupsController < ApplicationController 
 
     def create 
-        @group = Group.create(group_params)
-        if @group
+        @group = Group.new(group_params)
+        if @group.save
+            @group.create_interactions(params[:usernames])
             Interaction.create(user_id: current_user.id, group_id: @group.id)
             render :show  
         else 
@@ -26,7 +27,7 @@ class Api::GroupsController < ApplicationController
     end   
 
     def index 
-        @groups = Group.joins(interactions: :user)
+        @groups = Group.joins(:users).where(users: {id: current_user.id})
         render :index 
     end  
 

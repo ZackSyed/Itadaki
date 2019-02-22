@@ -1,5 +1,5 @@
 class Tab < ApplicationRecord 
-    validates :total, name, presence: true 
+    validates :total, :name, presence: true 
     validates :settled, inclusion: { in: [ true, false ] }
 
     belongs_to :group 
@@ -9,7 +9,7 @@ class Tab < ApplicationRecord
 
     has_many :splits
 
-    after_commit :create_split 
+    # after_commit :create_split 
 
     def create_split
         Split.create(tab_id: self.id, user_id: self.lender_id)

@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :friends, only: [:create, :show, :index]
     resources :groups, only: [:create, :show, :destroy, :index]
     resources :tabs, only: [:create, :show, :index]
+    resources :interactions, only: [:create, :show, :destroy]
   end 
 end
