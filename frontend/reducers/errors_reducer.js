@@ -13,13 +13,25 @@ export default (oldState = [], action) => {
                 return action.errors; 
             } 
         case RECEIVE_USER_ERRORS:
-            return action.errors;
+            if (action.errors === undefined) {
+                return oldState; 
+            } else {
+                return action.errors; 
+            } 
         case FRIEND_ERRORS:
-            return action.errors;
+            if (action.errors === undefined) {
+                return oldState; 
+            } else {
+                return action.errors; 
+            } 
         case RECEIVE_CURRENT_USER:
             return []; 
         case RECIEVE_TAB_ERROR:
-            return action.errors;
+            if (action.errors === undefined) {
+                return oldState; 
+            } else {
+                return action.errors; 
+            } 
         default: 
             return oldState; 
     }

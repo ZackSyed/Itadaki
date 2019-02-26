@@ -34,7 +34,7 @@ export const fetchGroup = (id) => dispatch => {
         dispatch(receiveGroup(group)));
 };
 
-export const createGroup = (group, usernames) => dispatch => {
+export const createGroup = (group, usernames = []) => dispatch => {
     return ApiGroupUtil.createGroup(group, usernames).then( group => 
         dispatch(receiveGroup(group)));
 };

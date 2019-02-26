@@ -19,6 +19,12 @@ class Dashboard extends React.Component {
         this.props.fetchTabs();
     }
 
+    componentDidUpdate(prevProps) {
+        if (prevProps !== this.props) {
+            this.render();
+        }
+    }
+
     renderCenter() {
         switch (this.props.location.pathname) {
             case '/dashboard':

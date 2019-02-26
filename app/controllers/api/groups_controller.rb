@@ -4,6 +4,7 @@ class Api::GroupsController < ApplicationController
         @group = Group.new(group_params)
         if @group.save
             @group.create_interactions(params[:usernames])
+            debugger
             Interaction.create(user_id: current_user.id, group_id: @group.id)
             render :show  
         else 

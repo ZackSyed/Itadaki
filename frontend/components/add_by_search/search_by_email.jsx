@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { createEFriend } from '../../actions/friend_actions';
+import { closeModal } from '../../actions/modal_actions';
 
 class SearchByEmail extends React.Component {
 
@@ -23,6 +24,7 @@ class SearchByEmail extends React.Component {
             email: "",
             body: ""
         });
+        this.props.closeModal();
     }
 
     fillForm(field){
@@ -54,6 +56,7 @@ const msp = state => ({
 
 const mdp = dispatch => ({
     createEFriend: (email) => dispatch(createEFriend(email)),
+    closeModal: () => dispatch(closeModal()), 
 });
 
 export default connect(msp, mdp)(SearchByEmail); 
