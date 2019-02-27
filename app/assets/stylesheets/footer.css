@@ -9,7 +9,15 @@
 .smiles {
     color: white;
     font-size: 26px;
-    margin-left: 137px;
+    margin-left: 504px;
+    display: block;
+    width: 379px;
+    padding: 10px;
     margin-top: 25px;
     text-shadow: rgba(0,0,0,.4) 0 -2px 0;
+}
+
+.below-component {
+    margin-top: 150px;
+    height: 29px;
 }
