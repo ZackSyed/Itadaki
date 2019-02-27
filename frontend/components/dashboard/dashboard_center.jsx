@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { openModal } from '../../actions/modal_actions';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUserSecret, faPlus, faUser } from '@fortawesome/free-solid-svg-icons';
+import DashAct from './dashboard_active';
 
 
 // Center of dashboard when the user has no friends!!

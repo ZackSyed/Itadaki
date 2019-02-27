@@ -13,6 +13,7 @@ const mdp = dispatch => {
     return {
         processForm: (group) => dispatch(createGroup(group)),  
         clearErrors: () => dispatch(haveErrors([])),
+        // fetchGroups: () => dispatch(fetchGroups()),
     };
 };
 

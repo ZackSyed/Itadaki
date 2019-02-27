@@ -5,6 +5,14 @@ export const fetchGroups = () => {
     });
 };
 
+// export const searchGroups = (partial) => {
+//     return $.ajax({
+//         method: 'get',
+//         url: 'api/groups',
+//         data: { partial }
+//     });
+// };
+
 export const fetchGroup = (id) => {
     return $.ajax({
         method: 'get',

@@ -28,7 +28,7 @@ class Dashboard extends React.Component {
     renderCenter() {
         switch (this.props.location.pathname) {
             case '/dashboard':
-                return <DashCenter />
+                return (this.props.tabs.length > 0 ? <DashAct /> : <DashCenter />)
             case '/activity':
                 return <DashRec />
             default:
@@ -90,7 +90,7 @@ class Dashboard extends React.Component {
                 </div>
 
                 <div className="activity-top"> 
-                    {this.props.tabs ? this.renderCenter() : <DashAct />}
+                    {this.renderCenter()}
                 </div>
 
                 <div className="dashboard-right-sidebar">

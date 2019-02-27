@@ -25,7 +25,7 @@ const deleteGroup = () => {
     };
 };
 
-const haveErrors = (errors) => {
+export const haveErrors = (errors) => {
     return {
         type: RECEIVE_GROUP_ERRORS,
         errors,

@@ -10,22 +10,34 @@ class GroupForm extends React.Component {
             usernames: []
         };
 
-        this.input_fields = ['inputs-0', 'inputs-1', 'inputs-2', 'inputs-3'];
+        // this.input_fields = ['inputs-0', 'inputs-1', 'inputs-2', 'inputs-3'];
         this.handleSubmit = this.handleSubmit.bind(this);
         this.addUsernames = this.addUsernames.bind(this);
         // this.addField = this.addField.bind(this)
     }
 
+    // componentDidUpdate(prevProps) {
+    //     if (prevProps !== this.props) {
+    //         if (this.state.group_name.length > 0 && ) {
+
+    //         }
+    //     }
+    // }
+
     handleSubmit(e) {
         e.preventDefault();
         this.addUsernames();
+        debugger
         this.props.processForm(this.state);
         this.setState = ({
             group_name: "",
             usernames: []
         });
-        if ()
-        this.props.history.push('/dashboard');
+        if (this.props.errors) {
+            this.render();
+        } else {
+            this.props.history.push('/dashboard');
+        }
     }
 
 
@@ -38,6 +50,13 @@ class GroupForm extends React.Component {
     addUsernames() {
         e.preventDefault();
         let usernames = $(".friend_fields").val();
+        // usernames.forEach(input => {
+        //     if (input === '') {
+        //         let idx = arr.indexOf(input);
+        //         arr.slice(0, idx - 1);
+        //     }
+        //     debugger
+        // })
         debugger
         this.setState({ usernames })
     }
@@ -89,6 +108,7 @@ class GroupForm extends React.Component {
 
                     <input className='btn group-submit' type="submit" value="Save"/>
                 </form>
+                {this.renderErrors()}
             </div>
 
         );
