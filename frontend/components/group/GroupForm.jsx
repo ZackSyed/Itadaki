@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { $ } from 'jquery';
 
 class GroupForm extends React.Component {
     constructor(props) {
@@ -11,16 +12,19 @@ class GroupForm extends React.Component {
 
         this.input_fields = ['inputs-0', 'inputs-1', 'inputs-2', 'inputs-3'];
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.addField = this.addField.bind(this)
+        this.addUsernames = this.addUsernames.bind(this);
+        // this.addField = this.addField.bind(this)
     }
 
     handleSubmit(e) {
         e.preventDefault();
+        this.addUsernames();
         this.props.processForm(this.state);
         this.setState = ({
             group_name: "",
             usernames: []
         });
+        if ()
         this.props.history.push('/dashboard');
     }
 
@@ -31,10 +35,25 @@ class GroupForm extends React.Component {
         };
     }
 
-    addField(e) {
+    addUsernames() {
         e.preventDefault();
-        var newInput = `input-${this.input_fields.length}`;
-        this.input_fields.inputs.concat(newInput);
+        let usernames = $(".friend_fields").val();
+        debugger
+        this.setState({ usernames })
+    }
+
+    renderErrors() {
+        let { errors } = this.props; 
+
+        return (
+        <ul>
+        {errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+        </ul>
+        );
     }
 
     render() {
@@ -53,15 +72,19 @@ class GroupForm extends React.Component {
                     <br />
 
                     <div className="friend-add present" ref={node => this.friend_fields = node} >
-                        <h1>Add friends here:</h1>
+                        <h3>Group Members:</h3>
+                        <p></p>
                         <br />
-                            {this.input_fields.map(input => 
-                                <div>
-                                    <input type="text" onChange={this.fillUsername('username')} value='' />
-                                    <button onClick={this.addUsername}>check</button>
-                                    <button className='add-more-fields' onClick={this.addField}>+</button>
-                                </div>
-                                )}
+                        <div className='friend_fields'>
+                            <input type="text" defaultValue='' placeholder='name' />
+
+                            <input type="text" defaultValue='' placeholder='name' />
+
+                            <input type="text" defaultValue='' placeholder='name' />
+
+                            <input type="text" defaultValue='' placeholder='name' />
+                        </div>
+
                     </div>
 
                     <input className='btn group-submit' type="submit" value="Save"/>

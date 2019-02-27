@@ -1,9 +1,10 @@
 class Api::GroupsController < ApplicationController 
 
     def create 
-        @group = Group.new(group_params)
+        @group = Group.new(group_params[:group_name])
         if @group.save
-            @group.create_interactions(params[:usernames])
+            debugger
+            @group.create_interactions(group_params[:usernames])
             debugger
             Interaction.create(user_id: current_user.id, group_id: @group.id)
             render :show  
@@ -33,6 +34,6 @@ class Api::GroupsController < ApplicationController
     end  
 
     def group_params 
-        params.require(:group).permit(:group_name)
+        params.require(:group).permit(:group_name, :usernames)
     end 
 end 

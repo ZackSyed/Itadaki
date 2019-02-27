@@ -45,7 +45,6 @@ class SessionForm extends React.Component {
         ))}
         </ul>
         );
-        this.render();
     }
 
 
