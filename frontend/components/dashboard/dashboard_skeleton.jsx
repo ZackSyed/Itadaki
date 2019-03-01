@@ -25,12 +25,13 @@ class Dashboard extends React.Component {
         }
     }
 
+    // this.props.children
     renderCenter() {
         switch (this.props.location.pathname) {
             case '/dashboard':
                 return (this.props.tabs.length > 0 ? <DashAct /> : <DashCenter />)
             case '/activity':
-                return <DashRec />
+                return <DashRec {...this.props} />
             default:
                 break;
         }

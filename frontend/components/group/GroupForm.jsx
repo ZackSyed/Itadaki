@@ -1,19 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { $ } from 'jquery';
+// import { $ } from 'jquery';
 
 class GroupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             group_name: "",
-            usernames: []
+            usernames: [''],
+            numInputFields: 1,
         };
 
-        // this.input_fields = ['inputs-0', 'inputs-1', 'inputs-2', 'inputs-3'];
+        this.addInputField = this.addInputField.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.addUsernames = this.addUsernames.bind(this);
-        // this.addField = this.addField.bind(this)
     }
 
     // componentDidUpdate(prevProps) {
@@ -26,20 +25,22 @@ class GroupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        this.addUsernames();
-        debugger
-        this.props.processForm(this.state);
+        this.props.processForm(this.state).then( () => {
+            this.props.history.push('/dashboard');
+        });
         this.setState = ({
             group_name: "",
             usernames: []
         });
-        if (this.props.errors) {
-            this.render();
-        } else {
-            this.props.history.push('/dashboard');
-        }
     }
 
+    addUsername(idx) {
+        return (e) => {
+            const { usernames } = this.state;
+            usernames[idx] = e.target.value;
+            this.setState({ usernames });
+        };
+    }
 
     fillForm(field) {
         return e => {
@@ -47,21 +48,7 @@ class GroupForm extends React.Component {
         };
     }
 
-    addUsernames() {
-        e.preventDefault();
-        let usernames = $(".friend_fields").val();
-        // usernames.forEach(input => {
-        //     if (input === '') {
-        //         let idx = arr.indexOf(input);
-        //         arr.slice(0, idx - 1);
-        //     }
-        //     debugger
-        // })
-        debugger
-        this.setState({ usernames })
-    }
-
-    renderErrors() {
+    renderErrors() { 
         let { errors } = this.props; 
 
         return (
@@ -73,6 +60,13 @@ class GroupForm extends React.Component {
         ))}
         </ul>
         );
+    }
+
+    addInputField(e) {
+        e.preventDefault();
+        const { usernames } = this.state;
+        usernames[usernames.length] = '';
+        this.setState({ usernames })
     }
 
     render() {
@@ -95,13 +89,10 @@ class GroupForm extends React.Component {
                         <p></p>
                         <br />
                         <div className='friend_fields'>
-                            <input type="text" defaultValue='' placeholder='name' />
-
-                            <input type="text" defaultValue='' placeholder='name' />
-
-                            <input type="text" defaultValue='' placeholder='name' />
-
-                            <input type="text" defaultValue='' placeholder='name' />
+                            {(this.state.usernames).map((username, idx) => 
+                                <input type="text" key={idx} value={username} placeholder='name' onChange={this.addUsername(idx)} /> 
+                            )}
+                            <button onClick={this.addInputField}>+</button>
                         </div>
 
                     </div>
