@@ -12,7 +12,7 @@ const receiveSplits = (splits) => {
 
 const haveErrors = (errors) => {
     return {
-        type: RECEIVE_SPLIT_ERRORS,
+        type: RECEIVE_SPLIT_ERRORS, 
         errors,
     }
 }

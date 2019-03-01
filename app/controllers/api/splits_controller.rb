@@ -1,7 +1,7 @@
 class Api::SplitsController < ApplicationController 
 
     def index 
-        @splits = Split.joins(:users).where(user: {id: current_user.id})
+        @splits = Split.joins(:user).where(user_id: current_user.id)
         if @splits 
             render :index
         else 

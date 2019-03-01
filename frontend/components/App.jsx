@@ -9,7 +9,8 @@ import GroupFormContainer from './group/groupFormContainer';
 import Footer from './footer/footer';
 import DashboardContainer from '../components/dashboard/dashboard_container';
 import Modal from '../components/modal/modal';
-import UserAccountContainer from '../components/user/user_account_container'
+import UserAccountContainer from '../components/user/user_account_container';
+
 
 
 const App = () => (
