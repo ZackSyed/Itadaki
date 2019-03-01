@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
+import { connect } from 'react-redux';
 
 class DashAct extends React.Component {
     constructor(props) {
@@ -27,4 +28,16 @@ class DashAct extends React.Component {
     }
 }
 
-export default DashAct; 
+const msp = (state) => {
+    return {
+        
+    }
+} 
+
+const mdp = dispatch => {
+    return {    
+        
+    }
+}
+
+export default connect(msp, mdp)(DashAct); 

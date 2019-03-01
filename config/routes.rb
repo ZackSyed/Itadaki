@@ -10,5 +10,6 @@ Rails.application.routes.draw do
     resources :groups, only: [:create, :show, :destroy, :index]
     resources :tabs, only: [:create, :show, :index]
     resources :interactions, only: [:create, :show, :destroy]
+    resources :splits, only: [:index]
   end 
 end
