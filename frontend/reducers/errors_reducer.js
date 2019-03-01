@@ -3,6 +3,8 @@ import { RECEIVE_USER_ERRORS } from '../actions/user_actions';
 import { FRIEND_ERRORS } from '../actions/friend_actions'; 
 import { RECIEVE_TAB_ERROR } from '../actions/tab_action';
 import { RECEIVE_GROUP_ERRORS } from '../actions/group_actions';
+import { RECEIVE_SPLIT_ERRORS } from '../actions/split_actions'; 
+
 
 export default (oldState = [], action) => {
     Object.freeze(oldState);
@@ -34,6 +36,12 @@ export default (oldState = [], action) => {
                 return action.errors; 
             } 
         case RECEIVE_GROUP_ERRORS:
+            if (action.errors === undefined) {
+                return oldState; 
+            } else {
+                return action.errors; 
+            } 
+        case RECEIVE_SPLIT_ERRORS:
             if (action.errors === undefined) {
                 return oldState; 
             } else {

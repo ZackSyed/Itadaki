@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faDesktop } from '@fortawesome/free-solid-svg-icons';
+import { fetchSplits } from '../../actions/split_actions';
 import { connect } from 'react-redux';
 
 class DashAct extends React.Component {
@@ -8,6 +9,12 @@ class DashAct extends React.Component {
         super(props);
 
     }   
+
+    componentDidMount() {
+        if (this.props.splits.length === 0) {
+            this.props.fetchSplits();
+        }
+    }
 
 
     render() {
@@ -30,13 +37,13 @@ class DashAct extends React.Component {
 
 const msp = (state) => {
     return {
-        
+        splits: Object.values(state.entities.splits)
     }
 } 
 
 const mdp = dispatch => {
-    return {    
-        
+    return {        
+        fetchSplits: () => dispatch(fetchSplits()),
     }
 }
 
