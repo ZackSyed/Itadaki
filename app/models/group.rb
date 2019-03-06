@@ -9,7 +9,6 @@ class Group < ApplicationRecord
         source: :user
 
     def create_interactions(usernames)
-        debugger
         usernames.each do |username|
             user = User.find_by(username: username)
             Interaction.create(user_id: user.id, group_id: self.id)
