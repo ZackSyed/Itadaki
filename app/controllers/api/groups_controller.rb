@@ -1,12 +1,14 @@
 class Api::GroupsController < ApplicationController 
 
     def create 
-        debugger
         @group = Group.new(group_name: group_params[:group_name])
-        if @group.save
+        if (@group.save && params[:group][:usernames])
             @group.create_interactions(params[:group][:usernames])
             Interaction.create(user_id: current_user.id, group_id: @group.id)
             render :show  
+        elsif 
+            Interaction.create(user_id: current_user.id, group_id: @group.id)
+            render :show 
         else 
             render json: @group.errors.full_messages 
         end 

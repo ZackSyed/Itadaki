@@ -4,13 +4,13 @@ class  Api::TabsController < ApplicationController
         @tab = Tab.new(name: tab_params[:name], total: tab_params[:total])
         @tab.lender_id = current_user.id 
         group = Group.find_by(group_name: tab_params[:group_name])
-        if !group 
+        if !group || (!is_current_users(group.users))
             g2 = Group.create(group_name: tab_params[:group_name])
+            Interaction.create(group_id: g2.id, user_id: current_user.id)
             @tab.group_id = g2.id
         else 
             @tab.group_id = group.id
         end 
-        debugger
         if @tab.save 
             @tab.create_split
             render :show
@@ -33,6 +33,17 @@ class  Api::TabsController < ApplicationController
         render :index
     end 
 
+    def is_current_users(users)
+        return false if (!users)
+        debugger
+        users.each do |user|
+            if user.username === current_user.username
+                return true 
+            end 
+        end 
+
+        return false
+    end 
 
     def tab_params 
         params.require(:tab).permit(:name, :total, :group_name)
