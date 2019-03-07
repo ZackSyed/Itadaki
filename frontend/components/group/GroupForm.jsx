@@ -8,7 +8,6 @@ class GroupForm extends React.Component {
         this.state = {
             group_name: "",
             usernames: [''],
-            numInputFields: 1,
         };
 
         this.addInputField = this.addInputField.bind(this);

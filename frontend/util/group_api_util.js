@@ -21,12 +21,12 @@ export const fetchGroup = (id) => {
     });
 };
 
-export const createGroup = (group) => {
+export const createGroup = (group, username = []) => {
     debugger
     return $.ajax({
         method: 'post',
         url: 'api/groups',
-        data: group
+        data: { group, username }
     });
 }; 
 

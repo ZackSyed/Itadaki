@@ -5,7 +5,7 @@ class Group < ApplicationRecord
     has_many :interactions
 
     has_many :users, 
-        through: :interactions, 
+        through: :interactions,
         source: :user
 
     def create_interactions(usernames)
