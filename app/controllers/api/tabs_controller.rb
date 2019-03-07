@@ -29,13 +29,13 @@ class  Api::TabsController < ApplicationController
     end 
 
     def index 
-        @tabs = Tab.where(lender_id: current_user.id)
+        @tabs = Tab.where(lender_id: grab_all_users)
         render :index
     end 
 
     def is_current_users(users)
         return false if (!users)
-        debugger
+        
         users.each do |user|
             if user.username === current_user.username
                 return true 
@@ -43,6 +43,18 @@ class  Api::TabsController < ApplicationController
         end 
 
         return false
+    end 
+
+    def grab_all_users 
+        all_groups = Group.joins(:users).where(users: {id: current_user.id})
+        my_groups = Group.where(id: all_groups.ids)
+
+        users = []
+        my_groups.each do |group|
+            users.push(group.users.ids)
+        end 
+
+        return users.flatten
     end 
 
     def tab_params 

@@ -37,9 +37,4 @@ class Api::GroupsController < ApplicationController
     def group_params 
         params.require(:group).permit(:group_name, :usernames)
     end 
-
-    # def usernames 
-    #     debugger
-    #     params[:group][:usernames]
-    # end 
 end 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faDesktop } from '@fortawesome/free-solid-svg-icons';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faDesktop } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 import { fetchSplits } from '../../actions/split_actions';
 import { openModal } from '../../actions/modal_actions';
@@ -10,6 +10,7 @@ class DashAct extends React.Component {
     constructor(props) {
         super(props);
 
+        this.totals = this.totals.bind(this);
     }   
 
     componentDidMount() {
@@ -17,30 +18,25 @@ class DashAct extends React.Component {
             this.props.fetchSplits();
         }
     }
-
-    // totalBalance() {
-
-    // }
-
-    // totalOwe() {
-        
-    // }
-
-    // totalAmountOwed() {
-       
     
+    totals() {
+        let totalOwed = 0;
+        let totalOwe = 0;
+        for (let i = 0; i < this.props.splits.length; i++) {
+            for (let j = 0; j < this.props.tabs.length; j++) {
+                let split = this.props.splits[i];
+                let tab = this.props.tabs[j];
+                if (split.user_id === tab.lender_id && split.tab_id === tab.id) {
+                    totalOwed += split.amount_owed;
+                } else if (!(split.user_id === tab.lender_id) && split.tab_id === tab.id) {
+                    totalOwe += tab.total - split.amount_owed;
+                }
+            }
+        }
+        return [totalOwe, totalOwed]
+    }
 
     render() {
-
-        // let totalOwed = 0;
-        // let totalOwe = 0;
-        // this.props.splits.forEach(el => {
-        //     if (el.user_id === this.props.) {
-
-        //     }
-        //     totalOwed += el.amount_owed; 
-        // })
-        // return total;
 
         return (
             <div>
@@ -51,9 +47,9 @@ class DashAct extends React.Component {
                 </div>
                 <div className="activity-center">
                     <div className='dash-amounts'>
-                        <span className='dash-amounts-descrip'>{`Total Balance ${null}`}</span>
-                        {/* <span className='dash-amounts-descrip'>{`you owe ${this.props.splits[0].amount_owed}`}</span> */}
-                        <span className='dash-amounts-descrip'>{`you are owed ${null}`}</span>
+                        <span className='dash-amounts-descrip'>{`Total Balance ${this.totals()[0] - this.totals()[1]}`}</span>
+                        <span className='dash-amounts-descrip'>{`you owe ${this.totals()[0]}`}</span>
+                        <span className='dash-amounts-descrip'>{`you are owed ${this.totals()[1]}`}</span>
                     </div>
                 </div>
             </div>
