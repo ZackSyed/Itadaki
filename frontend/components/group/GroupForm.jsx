@@ -77,7 +77,7 @@ class GroupForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="group-form">
                     <h2 className="group-form-header">START A NEW GROUP</h2>
 
-                    <label className="group-tag">My group shall be called...
+                    <label className="group-tagline">My group shall be called...
                         <br />
                         <input className="group-name-field" onChange={this.fillForm('group_name')} type="text" value={this.state.group_name} />
                     </label>

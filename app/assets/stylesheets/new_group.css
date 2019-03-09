@@ -28,9 +28,12 @@
     opacity: 0.8;
 }
 
-.group-tag {
-    font-size: 25px;
+.group-tagline {
+    font-size: 26px;
+    color: black;
+    margin-right: 5px;
 }
+
 
 .group-name-field {
     height: 50px;

@@ -25,8 +25,10 @@ class Navbar extends React.Component {
             let className; 
             if (pathname === '/signup') {
                className = 'navbar disappear';
+            } else if (pathname === '/groups/new') {
+               className = 'navbar disappear';
             } else {
-               className = 'navbar present';
+                className = 'navbar present';
             }
 
 
