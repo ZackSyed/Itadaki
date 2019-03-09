@@ -56,3 +56,6 @@
     width: 72px;
 }
 
+.line {
+    border-bottom: 1px solid #ccc;
+}

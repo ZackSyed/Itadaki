@@ -83,17 +83,18 @@ class GroupForm extends React.Component {
                     </label>
                     <br />
 
+                    <div className="line"></div>
+
                     <div className="friend-add present" ref={node => this.friend_fields = node} >
                         <h3>Group Members:</h3>
-                        <p></p>
-                        <br />
+
                         <div className='friend_fields'>
                             {(this.state.usernames).map((username, idx) => 
-                                <input type="text" key={idx} value={username} placeholder='name' onChange={this.addUsername(idx)} /> 
+                                <input type="text" key={idx} className='group-friend-input' value={username} placeholder='name' onChange={this.addUsername(idx)} /> 
                             )}
-                            <button onClick={this.addInputField}>+</button>
                         </div>
 
+                        <button onClick={this.addInputField}>+</button>
                     </div>
 
                     <input className='btn group-submit' type="submit" value="Save"/>
