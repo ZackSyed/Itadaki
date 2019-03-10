@@ -1,9 +1,41 @@
-
-.coming-soon {
+.dash-amounts {
+    background-color: #eeeeee;
     display: flex;
-    flex-direction: column;
+    justify-content: space-around;
+    height: 50px;
+    align-items: center;
+    box-shadow: #e8e8e8 0px 0px 2px 0px;    
+    border-bottom: 1px solid #cccccc;
 }
 
-.soon-img {
-    
+.dash-amounts .dash-amount-seperator:first-child {
+    border-left: none;
+}
+
+.dash-amounts-descrip {
+    font-size: 13px;
+    height: 30px;
+    color: #999;
+}
+
+.dash-amounts-num {
+    position: absolute;
+    top: 124px;
+    color: #5bc5a7;
+    font-size: 13px;
+}
+
+.dash-amounts-num-owe {
+    position: absolute;
+    top: 124px;
+    color: #ff652f;
+    font-size: 13px;
+}
+
+.dash-amount-seperator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 175px;
+    border-left: 1px solid #ddd;
 }

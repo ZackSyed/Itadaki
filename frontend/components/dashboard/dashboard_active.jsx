@@ -47,9 +47,20 @@ class DashAct extends React.Component {
                 </div>
                 <div className="activity-center">
                     <div className='dash-amounts'>
-                        <span className='dash-amounts-descrip'>{`Total Balance ${this.totals()[0] - this.totals()[1]}`}</span>
-                        <span className='dash-amounts-descrip'>{`you owe ${this.totals()[0]}`}</span>
-                        <span className='dash-amounts-descrip'>{`you are owed ${this.totals()[1]}`}</span>
+                        <div className='dash-amount-seperator'>
+                            <span className='dash-amounts-descrip'>Total Balance</span>
+                            <strong className='dash-amounts-num' >${this.totals()[0] - this.totals()[1]}</strong>
+                        </div>
+
+                        <div className='dash-amount-seperator'>
+                            <span className='dash-amounts-descrip'>you owe</span>
+                            <strong className='dash-amounts-num-owe' >${this.totals()[0]}</strong>
+                        </div>
+
+                        <div className='dash-amount-seperator'>
+                            <span className='dash-amounts-descrip'>you are owed</span>
+                            <strong className='dash-amounts-num' >${this.totals()[1]}</strong>
+                        </div>
                     </div>
                 </div>
             </div>
