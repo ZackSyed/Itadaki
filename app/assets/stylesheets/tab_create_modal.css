@@ -3,6 +3,9 @@
     flex-direction: column;
     width: 350px; 
     height: 400px; 
+    position: absolute;
+    left: -175px;
+    top: -89px;
 }
 
 .tab-create-header {
@@ -32,24 +35,19 @@
 .tab-create-form {
     padding: 4px;
     border-bottom: 1px solid #eee;
-    padding-left: 98px;
-    max-height: 250px;
+    padding-left: 88px;
+    max-height: 230px;
     overflow-y: auto;
     background: #ffffff;    
     display: flex;
     flex-direction: column;
 }
 
-.tab-create-field-holder {
-    margin-top: -132px;
-    margin-bottom: 25px;
-}
-
 .tab-create-group-name {
     border: none;
     padding: 5px;
     width: 221px;
-    height: 25px;
+    height: 29px;
     font-size: 15px;
     color: gray;
 }
@@ -63,16 +61,15 @@
     margin-bottom: -29px;
     width: 352px;
     border-bottom: 1px solid black;
-    margin-left: -100px;
+    margin-left: -90px;
     display: flex;
     justify-content: center;
 }
 
 .tab-create-img {
-    margin-left: -78px;
-    margin-top: 37px;
-    width: 50px;
-    height: 67px;
+    position: absolute;
+    top: 105px;
+    left: 16px;
 }
 
 

@@ -21,8 +21,6 @@
     background-color: lightgray;
 }
 
-
-
 .to-dash {
     border-radius: 0px !important;
     text-shadow: none !important;
@@ -33,7 +31,6 @@
 .to-dash:hover {
     background-color: lightgray;
 }
-
 
 .rec-act {
     border-radius: 0px !important;
@@ -73,13 +70,20 @@
 }
 
 .add-group {
-    margin-top: 10px;
-    margin-bottom: 9px;
+    position: absolute;
+    top: 172px;
+    left: 26px;
     border: 1px solid #eee;
     color: gray;
     background: #eee;
     text-align: right;
     font-size: 13px;
+    width: 141px;
+}
+
+.tag-group {
+    display: flex;
+    flex-direction: column;
 }
 
 .groups {
@@ -90,6 +94,7 @@
 .redir-group {
     text-decoration: none;
     color: gray;
+    margin-right: 3px;
 }
 
 .group-add {
@@ -101,6 +106,10 @@
     color: gray;
     text-align: center;
     font-size: 12px;
+}
+
+.groups-here {
+    margin-bottom: 20px;
 }
 
 .group {
@@ -117,20 +126,16 @@
 .left-side-group-display {
     font-size: 16px;
     color: #5bc5a7;
-    margin-left: 5px;
-    margin-left: -35px;
-    margin-top: -19px;
-    margin-bottom: 22px;
 }
 
 .add-friends {
-    margin-top: 21px;
-    margin-bottom: 9px;
     border: 1px solid #eee;
     color: gray;
     background: #eee;
     text-align: right;
     font-size: 13px;
+    width: 141px;
+    margin-left: 25px;
 }
 
 .friends-link {
@@ -141,6 +146,7 @@
 .redir-friend {
     text-decoration: none;
     color: gray;
+    margin-right: 3px;
 }
 
 .friend-add {
@@ -161,7 +167,6 @@
 
 .u-have-friends {
     color: #5cc4a6;
-    margin-left: -41px;
 }
 
 .friend-side-tag {
@@ -170,10 +175,19 @@
 
 .add-friends-list {
     display: flex;
-    margin-top: -2px;
+    margin-top: 10px;
     flex-direction: column;
     justify-content: space-between;
 }
 
-.add-friends-here {
+.sidebar-nav {
+    position: absolute;
+    top: 81px;
+    left: 26px;
+    display: flex;
+    flex-direction: column;
+}
+
+active:active {
+    color: #5bc5a7;
 }

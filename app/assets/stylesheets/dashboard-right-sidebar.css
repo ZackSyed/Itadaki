@@ -1,5 +1,7 @@
 .dashboard-right-sidebar {
-    margin-top: 31px;
+    position: absolute;
+    left: 768px;
+    top: 30px;
     width: 100%;
 }
 

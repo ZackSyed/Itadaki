@@ -11,7 +11,9 @@
 }
 
 .activity-top {
-    margin-top: 52px;
+    position: absolute;
+    left: 190px;
+    top: 52px;
 }
 
 

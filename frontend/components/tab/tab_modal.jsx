@@ -38,15 +38,12 @@ class TabModal extends React.Component {
                 <span className='tab-create-header-tag'>Add a Bill </span>
                 <button onClick={this.props.closeModal} className="tab-closer">X</button>
                 </div>
+                
                     <form onSubmit={this.handleSubmit} className='tab-create-form'> 
                     
-                            <div className='tab-create-img-holder'>
-                                <img className="tab-create-img" src={window.tab}/>
-                            </div>
-                            
+                            <img className="tab-create-img" src={window.tab}/>
+                        
                             <div className='tab-create-field-holder'>
-
-                                <br/>   
                                     <div className='tab-create-group-holder'>
                                         {/* <span className='tab-create-group-tag'>With you and:</span> */}
                                         <input  className='tab-create-group-name' onChange={this.fillForm('group_name')} type="text" value={this.state.group_name} placeholder='Enter group name' />
