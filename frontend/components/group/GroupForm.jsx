@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { $ } from 'jquery';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
 
 class GroupForm extends React.Component {
     constructor(props) {
@@ -86,19 +87,26 @@ class GroupForm extends React.Component {
                     <div className="line"></div>
 
                     <div className="friend-add present" ref={node => this.friend_fields = node} >
-                        <h3>Group Members:</h3>
-
+                        <h3 className='friend-add-tag'>Group Members</h3>
+                        
+                        <p className='current-user-info'>
+                        <FontAwesomeIcon icon={faUser} className="plus-friend-btn" />
+                        {this.props.currentUser.email}
+                        </p>
+                        
                         <div className='friend_fields'>
                             {(this.state.usernames).map((username, idx) => 
                                 <input type="text" key={idx} className='group-friend-input' value={username} placeholder='name' onChange={this.addUsername(idx)} /> 
                             )}
                         </div>
 
-                        <button onClick={this.addInputField}>+</button>
+                        <button className='btn add-friend-input-field-btn' onClick={this.addInputField}>+ Add a person</button>
                     </div>
 
                     <input className='btn group-submit' type="submit" value="Save"/>
                 </form>
+
+                <div className="line"></div>
                 {this.renderErrors()}
             </div>
 

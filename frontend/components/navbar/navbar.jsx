@@ -10,7 +10,8 @@ class Navbar extends React.Component {
         super(props); 
 
         this.userLogout = this.userLogout.bind(this);
-
+        console.log('%cLooking for a software developer, check my portfolio to see if I am a good fit for your company', "color: blue; font-size:15px;");
+        console.log('%chttps://zacksyed.github.io/Portfolio-Page/', "font-size:20px;")    
     }
 
     userLogout(e) {

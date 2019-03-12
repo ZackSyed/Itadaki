@@ -59,3 +59,28 @@
 .line {
     border-bottom: 1px solid #ccc;
 }
+
+.friend-add-tag {
+    position: absolute;
+    top: 341px;
+}
+
+.friend_fields {
+    display: flex;
+    flex-direction: column;
+    margin-top: 85px;
+    margin-left: -144px;
+    margin-bottom: 100px;
+}
+
+.current-user-info {
+    margin-top: 35px;
+}
+
+.add-friend-input-field-btn {
+    height: 33px;
+    width: 125px;
+    margin-top: 169px;
+    margin-left: -154px;
+    color: blue;
+}

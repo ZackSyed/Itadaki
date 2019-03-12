@@ -6,6 +6,7 @@ import GroupForm from './GroupForm';
 const msp = state => {
     return {
         errors: Object.values(state.errors),
+        currentUser: (state.entities.users[state.session.id])
     }
 }
 
@@ -13,7 +14,6 @@ const mdp = dispatch => {
     return {
         processForm: (group) => dispatch(createGroup(group)),  
         clearErrors: () => dispatch(haveErrors([])),
-        // fetchGroups: () => dispatch(fetchGroups()),
     };
 };
 
