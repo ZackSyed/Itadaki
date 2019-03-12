@@ -42,10 +42,10 @@ class Navbar extends React.Component {
           const noUser = (
             <>
                 <li>
-                <Link className="btn btn-l" to="/login">Log in </Link>
+                    <Link className="btn btn-l" to="/login">Log in </Link>
                 </li>
                 <li >
-                <Link className="btn btn-s" to="/signup"> Sign up</Link>
+                    <Link className="btn btn-s" to="/signup"> Sign up</Link>
                 </li>
             </>
           )

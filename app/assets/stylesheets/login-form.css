@@ -34,7 +34,7 @@
     font-size: 20px;
     color: #fff;
     background: #ff652f;
-    border: 1px solid #e65928;
+    border: 1px solid #c14a20;
     box-shadow: #e65928 0px 1px 2px 0px;
     margin-right: auto;
     margin-top: 25px;
@@ -45,6 +45,24 @@
     border-top-color: #f1612c;
     background: #f0531a;
 }
+
+.demo-btn {
+    position: absolute;
+    top: 286px;
+    left: 707px;
+    font-size: 20px;
+    color: #fff;
+    background: #5cc4a6;
+    border: 1px solid #42937c;
+    box-shadow: #39a385 0px 1px 3px 0px;
+    width: 150px;
+}
+
+.demo-btn:hover {
+    border-top-color: #51a890;
+    background: #51a890;
+}
+
 
 .errors {
     margin-top: 232px;

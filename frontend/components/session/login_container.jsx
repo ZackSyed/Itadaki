@@ -11,7 +11,7 @@ const msp = state => {
         navLink: <Link className="session-link" to='/signup'>Make an account</Link>,
         taglines: { top: "WELCOME TO ITADAKI", 
         bottom: "forgot your password?", 
-        button: "Log in", first: "username:" },
+        button: "Log in", demo_button: "Demo Log in", first: "username:" },
         className: { form: "logmein", email: "em-field", 
         tag: "empty", submit: "btn log", t: "tip" },
         errors: Object.values(state.errors),
