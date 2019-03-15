@@ -6,8 +6,9 @@
 .recent-li-list {
     margin-bottom: 14px;
     height: 80px;
+    padding: 10px;
     border-bottom: 1px solid black;
-    margin-left: -41px;
+    margin-left: -40px;
     display: flex;
     flex-direction: row;
     

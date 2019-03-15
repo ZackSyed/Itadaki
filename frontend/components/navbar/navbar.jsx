@@ -32,6 +32,13 @@ class Navbar extends React.Component {
                 className = 'navbar present';
             }
 
+
+          const accountPage = (
+                <div className='button-to-dash'>
+                    <Link to='/dashboard' className='btn to-dash-link'>Home</Link>
+                </div>
+          )
+
           const userHere = (
                <div className="dropdown">
                    <button className="btn dropdown-btn" >{user.username}</button>
@@ -72,6 +79,7 @@ class Navbar extends React.Component {
                         </ul>  
                     </h1></Link>
                     <ul className="navbuttons">
+                        {this.props.location.pathname === '/account' ? accountPage : null}
                         {user.id ? userHere : noUser }
                     </ul>
                 </div>

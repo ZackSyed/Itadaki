@@ -106,18 +106,19 @@
  }
 
  
- .dropdown-btn {
-     background-color:#5cc4a6;
-     color: white;
-     padding: 16px;
-     font-size: 16px; 
-     border: none;
-     cursor: pointer;
-    }
+.dropdown-btn {
+    background-color:#5cc4a6;
+    color: white;
+    padding: 16px;
+    font-size: 16px; 
+    border: none;
+    cursor: pointer;
+}
     
 .dropdown {
     position: relative;
     display: inline-block; 
+    margin-top: -4px;
 }
 
 .drop-options {
@@ -155,4 +156,18 @@
 .link-to-dash {
     text-decoration: none;
     color: #ffffff;
+}
+
+.to-dash-link {
+    background-color:#5cc4a6;
+    color: white;
+    padding: 16px;
+    font-size: 16px; 
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.to-dash-link:hover {
+    background-color:#39a385;
 }
