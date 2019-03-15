@@ -5,6 +5,7 @@ class  Api::TabsController < ApplicationController
         @tab.lender_id = current_user.id 
         group = Group.find_by(group_name: tab_params[:group_name])
         if !group || (!is_current_users(group.users))
+            debugger
             g2 = Group.create(group_name: tab_params[:group_name])
             Interaction.create(group_id: g2.id, user_id: current_user.id)
             @tab.group_id = g2.id
@@ -35,7 +36,7 @@ class  Api::TabsController < ApplicationController
 
     def is_current_users(users)
         return false if (!users)
-        
+        debugger
         users.each do |user|
             if user.username === current_user.username
                 return true 

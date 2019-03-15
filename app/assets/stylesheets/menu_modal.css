@@ -1,0 +1,23 @@
+.dropdown-holder {
+    display: flex;
+    flex-direction: column;
+    height: 125px;
+    width: 150px;
+    background: white;
+    position: absolute;
+    top: -252px;
+    left: 300px;
+    border-radius: 3px;
+}
+
+.drop-option {
+    text-rendering: optimizeLegibility;
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+}
+
+.drop-option:hover {
+    background: #5cc4a6;
+    color: white;
+}

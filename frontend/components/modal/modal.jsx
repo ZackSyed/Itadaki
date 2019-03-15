@@ -5,11 +5,13 @@ import AddFriendContainer from '../friend/add_Friend_Container';
 import SearchByUsername from '../add_by_search/search_by_username';
 import SearchByEmail from '../add_by_search/search_by_email';
 import TabFormContainer from '../tab/tab_form_container';
+import DropdownContainer from '../navbar/menu_modal_container';
 
 function Modal({modal, closeModal}) {
   if (!modal) {
     return null;
   }
+
   let component;
   switch (modal) {
        case 'friend':
@@ -23,6 +25,9 @@ function Modal({modal, closeModal}) {
           break;
        case 'tab':
           component = <TabFormContainer />;
+          break;
+        case 'menu':
+          component = <DropdownContainer />
           break;
         default:
           return null;

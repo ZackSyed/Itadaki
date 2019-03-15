@@ -1,7 +1,7 @@
 import React from 'react'; 
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux'; 
-import { logout } from '../../actions/session_actions';
+import { openModal } from '../../actions/modal_actions';
 import { withRouter } from "react-router";
 
 
@@ -9,16 +9,9 @@ class Navbar extends React.Component {
     constructor(props) {
         super(props); 
 
-        this.userLogout = this.userLogout.bind(this);
         console.log('%cLooking for a software developer, check my portfolio to see if I am a good fit for your company', "color: blue; font-size:15px;");
         console.log('%chttps://zacksyed.github.io/Portfolio-Page/', "font-size:20px;")    
     }
-
-    userLogout(e) {
-        e.preventDefault();
-        this.props.logout();
-    }
-
 
     render() {
         let { user, location: { pathname } } = this.props; 
@@ -32,10 +25,9 @@ class Navbar extends React.Component {
                 className = 'navbar present';
             }
 
-
           const userHere = (
                <div className="dropdown-menu">
-                   <button className="btn dropdown" onClick={this.userLogout}>{user.username}</button>
+                   <button className="btn dropdown" onClick={this.props.openModal}>{user.username}</button>
                </div>
           )
 
@@ -87,7 +79,7 @@ const msp = ({ session, entities }) => {
 }
 
 const mdp = dispatch => ({
-    logout: () => dispatch(logout()),
+    openModal: () => dispatch(openModal('menu')),
 })
 
 

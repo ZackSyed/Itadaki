@@ -8,24 +8,12 @@
     margin-right: 15px;
 }
 
-.to-account {
-    text-decoration: none;
-    color: gray;
-    width: 122px;
-    margin-left: 11px;
-    margin-bottom: 5px;
-    margin-top: -34px;
-}
-
-.to-account:hover {
-    background-color: lightgray;
-}
-
 .to-dash {
     border-radius: 0px !important;
     text-shadow: none !important;
     color: gray;
     width: 122px;
+    margin-bottom: 8px;
 }
 
 .to-dash:hover {
@@ -37,6 +25,7 @@
     text-shadow: none !important;
     color: gray;
     width: 126px;
+    margin-bottom: 8px;
 }
 
 .rec-act:hover {
@@ -48,12 +37,12 @@
     text-shadow: none !important;
     color: gray;
     width: 122px;
+    margin-bottom: 8px;
 }
 
 .all-exp:hover {
     background-color: lightgray;
 }
-
 
 .main-dash-img {
     height: 20px;
@@ -182,12 +171,8 @@
 
 .sidebar-nav {
     position: absolute;
-    top: 81px;
+    top: 40px;
     left: 26px;
     display: flex;
     flex-direction: column;
-}
-
-active:active {
-    color: #5bc5a7;
 }
