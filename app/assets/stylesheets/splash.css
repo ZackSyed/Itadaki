@@ -31,7 +31,7 @@
     white-space: nowrap;
     overflow: hidden;
     margin-right: 50px;
-    margin-left: 55px;
+    margin-left: 200px;
     position: relative;
     height: 450px;
     padding: 23px 0;
@@ -51,7 +51,6 @@
     opacity: 1;
     align-content: center;
     transition: transform .2s;
-    margin-left: 153px;
     margin-right: 29px;
 }
 
@@ -104,11 +103,6 @@
     margin-bottom: 10px
 }
 
-@media (max-width: 400px) {
+/* @media (min-width: 1024px) {
 
-    .splash-img {
-        margin-left: -16px;
-    }
-
-    
-}
+} */
