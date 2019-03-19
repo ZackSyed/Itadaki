@@ -51,6 +51,7 @@
     opacity: 1;
     align-content: center;
     transition: transform .2s;
+    margin-left: 153px;
     margin-right: 29px;
 }
 
@@ -103,6 +104,11 @@
     margin-bottom: 10px
 }
 
-/* @media (min-width: 1024px) {
+@media (max-width: 400px) {
 
-} */
+    .splash-img {
+        margin-left: -16px;
+    }
+
+    
+}
