@@ -16,15 +16,12 @@
 
 .letters {
     display: flex;
-    font-size: 19px;
     padding: 10px;
     font-family: inherit;
     width: 220px;
     flex-direction: row;
     justify-content: space-around;
-    margin-top: -20px;
     margin-left: 154px;
-    font-weight: none;
 }
 
 .navbar {
@@ -32,7 +29,7 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 75px;
     z-index: 99;
     background: #5bc5a7;
     color: #fff;
@@ -44,13 +41,14 @@
 .flex-container {
     display: flex;
     justify-content: space-between;
-    height: 50px;
+    align-items: center;
+    height: 80px;
     width: 95%;
 }
 
 .btn-l {
-    font-size: 14px;
-    border-top: 1px solid #50b195;
+    font-size: 20px;
+    border-top: 1px solid #42937c;
     border-bottom: 1px solid #42937c; 
     background:  #5cc4a6;
     color: #fff;
@@ -65,9 +63,9 @@
  }
 
  .btn-s {
-    font-size: 14px;
+    font-size: 20px;
     background: #ff652f;
-    border-top: 1px solid #e65928; 
+    border-top: 1px solid #c14a20; 
     border-bottom: 1px solid #c14a20;
     color: #fff;
     box-shadow: #e65928 0px 1px 3px 0px;

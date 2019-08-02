@@ -19,7 +19,16 @@
 
 .below-component {
     height: 29px;
-    width: 1545px;
     margin-left: -8px;
-    margin-top: 500px;
+    margin-top: 200px;
+}
+
+.links-to-me{
+
+}
+
+@Media screen and (max-width: 992px){
+    .below-component{
+        width: 129%;
+    }   
 }

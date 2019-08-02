@@ -1,4 +1,5 @@
 .masthead {
+    width: 100%;
     box-shadow: none;
 }
 
@@ -30,8 +31,6 @@
     width: 100%;
     white-space: nowrap;
     overflow: hidden;
-    margin-right: 50px;
-    margin-left: 200px;
     position: relative;
     height: 450px;
     padding: 23px 0;
@@ -103,6 +102,18 @@
     margin-bottom: 10px
 }
 
-/* @media (min-width: 1024px) {
+.describe-me{
+    border: 2px dashed black;
+    font-size: 40px;
+    font-weight: 300px;
+    margin-top: 30px;
+    width: 90%;
+    height: 200px;
+}
 
-} */
+@media screen and (max-width: 992px) {
+    .masthead{
+        margin-left: 129px;
+        margin-top: 122px;
+    }
+}

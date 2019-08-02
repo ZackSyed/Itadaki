@@ -24,6 +24,10 @@ default: &default
 development:
   <<: *default
   database: itadaki_development
+  username: postgres
+  password: superPassword
+  
+
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
@@ -37,11 +41,11 @@ development:
   # Connect on a TCP socket. Omitted by default since the client uses a
   # domain socket that doesn't need configuration. Windows does not have
   # domain sockets, so uncomment these lines.
-  #host: localhost
+  host: localhost
 
   # The TCP port the server listens on. Defaults to 5432.
   # If your server runs on a different port number, change accordingly.
-  #port: 5432
+  port: 5432
 
   # Schema search path. The server defaults to $user,public
   #schema_search_path: myapp,sharedapp,public
@@ -57,7 +61,9 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: itadaki_test
+  # url: 'postgres://lzabzlwdriiqyh:f9a5ca3bbd2c672cef1e8f5e25dfec11ad859fd3f981b1cea2ac847c5b5ca2e4@ec2-50-17-193-83.compute-1.amazonaws.com:5432/deb60ugrcoeenm'
+  username: postgres
+  password: superPassword
 
 # As with config/secrets.yml, you never want to store sensitive information,
 # like your database password, in your source code. If your source code is
@@ -80,6 +86,6 @@ test:
 #
 production:
   <<: *default
-  database: itadaki_production
-  username: itadaki
-  password: <%= ENV['ITADAKI_DATABASE_PASSWORD'] %>
+  username: postgres
+  password: superPassword
+  # url: 'postgres://lzabzlwdriiqyh:f9a5ca3bbd2c672cef1e8f5e25dfec11ad859fd3f981b1cea2ac847c5b5ca2e4@ec2-50-17-193-83.compute-1.amazonaws.com:5432/deb60ugrcoeenm'
